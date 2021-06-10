@@ -3,8 +3,7 @@ Documentation
 
 -   [1 Ternary Networks](#ternary-networks)
     -   [1.1 Example](#example)
--   [2 *SteadyCellPhenotype*
-    functionalities](#steadycellphenotype-functionalities)
+-   [2 *SteadyCellPhenotype* tools](#tools)
 
 # 1 Ternary Networks
 
@@ -22,11 +21,14 @@ all nodes in the network are updated simultaneously.
 
 To make terminology precise and clear we will use one of our previously
 published models of intracellular iron metabolism
-<https://doi.org/10.1371/journal.pcbi.1005352>. Here we only will use
+<https://doi.org/10.1371/journal.pcbi.1005352>. We have selected a
 portion of the network termed *Iron Homeostasis Pathway* in the article
-(Hepcidin is excluded), which results in the network on six nodes. See
-image below.
+(Fig 1. Intracellular iron network). Note that Hepcidin was excluded,
+which resulted in the network on six nodes (image below). We will also
+demonstrate functionalities and tools of the *SteadyCellPhenotype* on
+the full 24-node model (see Section [*SteadyCellPhenotype*
+tools](#tools)).
 
 ![Iron Model 2017.](Iron_core.png)
 
-# 2 *SteadyCellPhenotype* functionalities
+# 2 *SteadyCellPhenotype* tools
