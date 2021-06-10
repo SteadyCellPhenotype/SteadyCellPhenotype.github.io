@@ -20,6 +20,6 @@ A ternary network is a pair $\mathcal{T}=(G, F)$, where $G$ is a digraph on $n$ 
 
 To make terminology precise and clear we will use one of our previously published models of intracellular iron metabolism https://doi.org/10.1371/journal.pcbi.1005352. Here we only will use portion of the network termed *Iron Homeostasis Pathway* in the article (Hepcidin is excluded), which results in the network on six nodes. See image below.  
 
-![Iron Model 2017.](Documentation_Files/figure-gfm/Iron_core.png)
+![Iron Model 2017.](Iron_core.png)
 
 # *SteadyCellPhenotype* functionalities 
