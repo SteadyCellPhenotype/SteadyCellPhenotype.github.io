@@ -27,6 +27,6 @@ portion of the network termed *Iron Homeostasis Pathway* in the article
 (Hepcidin is excluded), which results in the network on six nodes. See
 image below.
 
-![Iron Model 2017.](Documentation_Files/figure-gfm/Iron_core.png)
+![Iron Model 2017.](./Documentation_Files/figure-gfm/Iron_core.png)
 
 # 2 *SteadyCellPhenotype* functionalities
