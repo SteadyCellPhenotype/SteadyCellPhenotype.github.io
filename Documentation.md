@@ -4,7 +4,7 @@ Documentation
 -   [1 Ternary Networks](#ternary-networks)
     -   [1.1 Example](#example)
 -   [2 *SteadyCellPhenotype*
-    functionanlities](#steadycellphenotype-functionanlities)
+    functionalities](#steadycellphenotype-functionalities)
 
 # 1 Ternary Networks
 
@@ -29,4 +29,4 @@ image below.
 
 ![Iron Model 2017.](Documentation_Files/figure-gfm/Iron_core.png)
 
-# 2 *SteadyCellPhenotype* functionanlities
+# 2 *SteadyCellPhenotype* functionalities

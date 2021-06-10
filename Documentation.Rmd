@@ -22,4 +22,4 @@ To make terminology precise and clear we will use one of our previously publishe
 
 ![Iron Model 2017.](Documentation_Files/figure-gfm/Iron_core.png)
 
-# *SteadyCellPhenotype* functionanlities 
+# *SteadyCellPhenotype* functionalities 
