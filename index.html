@@ -29,16 +29,30 @@
 
     <h1>Ternary networks: a brief introduction</h1>
 
-        <p>Ternary models can represent biomolecular networks in the simple and intuitive manner by viewing the network in terms of a collection of logical rules. One can think of these models as an extension of Boolean models  if simple logic is employed, but ternary models can also utilize more complicated rules and expressions. Each species in ternary network is represented by three states: 0, 1, and 2. Various assignments have been suggested for the states. For example, one possibility is to view 0 as <i>false/inactive</i>, 2 as <i>true/active</i>, and 1 as <i>unknown</i>, meaning that 1 can be either true/active or false/inactive. Another possibility is to think of these numbers as concentration levels of various proteins: <i>low</i> (0), <i>normal</i> (1) and <i>high</i> (2). Regardless of the labeling the interactions in the network can be translated into functions over finite filed on three elements and then used to perform simulations and to compute the entire state space.
+        <p> Ternary models can represent biomolecular networks in the simple and intuitive manner by viewing the network in terms of a
+            collection of logical rules. One can think of these models as an extension of Boolean models  if simple logic is employed, but
+            ternary models can also utilize more complicated rules and expressions. Each species in ternary network is represented by three
+            states: 0, 1, and 2. Various assignments have been suggested for the states. For example, one possibility is to view 0 as
+            <i>false/inactive</i>, 2 as <i>true/active</i>, and 1 as <i>unknown</i>, meaning that 1 can be either true/active or
+            false/inactive. Another possibility is to think of these numbers as concentration levels of various proteins: <i>low</i> (0),
+            <i>normal</i> (1) and <i>high</i> (2). Regardless of the labeling the interactions in the network can be translated into functions
+            over finite filed on three elements and then used to perform simulations and to compute the entire state space.
         </p>
     
-        <p> Formally, a ternary network is a pair \(\mathcal{T}=(G, F)\), where \(G\) is a digraph on \(n\) nodes and \[F = (f_1, \dots, f_n): \{0,1,2\}^n \to \{0,1,2\}^n\] is a global transition function. Each node \(v\) in \(G\) takes on the values in the set \(\{0,1,2\}\) and is updated by a local activation function \(f_v:\{0,1,2\}^n \to \{0,1,2\}\). The value of the function \(f_v\) depends on its input nodes and their current state.
+        <p> Formally, a ternary network is a pair \(\mathcal{T}=(G, F)\), where \(G\) is a digraph on \(n\) nodes and \[F = (f_1, \dots,
+            f_n): \{0,1,2\}^n \to \{0,1,2\}^n\] is a global transition function. Each node \(v\) in \(G\) takes on the values in the set
+            \(\{0,1,2\}\) and is updated by a local activation function \(f_v:\{0,1,2\}^n \to \{0,1,2\}\). The value of the function \(f_v\)
+            depends on its input nodes and their current state.
         </p>
         
-        <p> Figure 1 below depicts a graph \(G\) on six species. This network is part of our previously published much larger network (see <a href = "https://doi.org/10.1371/journal.pcbi.1005352">https://doi.org/10.1371/journal.pcbi.1005352</a>). We have selected <i>iron homeostasis pathway</i> to demonstrate the ideas and the terminology of this section. The underlying graph is directed graph in the sense that each species is connected by an arc (edge) that has a direction, e.g., there is a direct arrow from TfR1 (transferrin receptor 1) to LIP (labile iron pool). In this network graph is also <i>signed</i> graph, that is, each connection from one species to the next is either positive (activation  - blue arc with an arrow head) or negative (inhibition - orange arc with a hammer head). We would like to note, that edges joining species do not have to be signed and our application <i>SteadyCellPhenotype</i> can handle any type of assignments. 
+        <p> Figure 1 below depicts a graph \(G\) on six species. This network is part of our previously published much larger network
+            (see <a href = "https://doi.org/10.1371/journal.pcbi.1005352">https://doi.org/10.1371/journal.pcbi.1005352</a>). We have selected <i>iron
+            homeostasis pathway</i> to demonstrate the ideas and the terminology of this section. The underlying graph is directed graph in
+            the sense that each species is connected by an arc (edge) that has a direction, e.g., there is a direct arrow from TfR1 (transferrin
+            receptor 1) to LIP (labile iron pool). In this network graph is also <i>signed</i> graph, that is, each connection from one species to
+            the next is either positive (activation  - blue arc with an arrow head) or negative (inhibition - orange arc with a hammer head).
+            We would like to note, that edges joining species do not have to be signed and our application <i>SteadyCellPhenotype</i> can handle any type of assignments.
         </p>
-        
-        
 
         <center>
         <figure>
