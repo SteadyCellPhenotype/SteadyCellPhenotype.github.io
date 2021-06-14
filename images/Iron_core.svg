@@ -48,31 +48,19 @@
       <polygon style="text-rendering:geometricPrecision; fill:none; clip-path:url(#clipPath1);" points=" 248 188 248 228 288 238 328 228 328 188 288 198 248 188" />
     </g>
     <g style="text-rendering:geometricPrecision; font-size:20; stroke-linecap:butt; stroke-linejoin:bevel;">
-      <text x="264" y="220" style="clip-path:url(#clipPath1); stroke:none;" xml:space="preserve">T</text>
-      <text x="277" y="220" style="clip-path:url(#clipPath1); stroke:none;" xml:space="preserve">f</text>
-      <text x="284" y="220" style="clip-path:url(#clipPath1); stroke:none;" xml:space="preserve">R</text>
-      <text x="297" y="220" style="clip-path:url(#clipPath1); stroke:none;" xml:space="preserve">1</text>
+      <text x="264" y="220" style="clip-path:url(#clipPath1); stroke:none;" xml:space="preserve">TfR1</text>
       <rect x="416" y="198.5" width="80" style="clip-path:url(#clipPath1); fill:url(#linearGradient3); stroke:none;" rx="5" ry="5" height="40" />
       <rect x="416" y="198.5" width="80" style="clip-path:url(#clipPath1); fill:none; stroke-linejoin:round; stroke-width:2;" rx="5" ry="5" height="40" />
-      <text x="433" y="226" style="clip-path:url(#clipPath1); stroke:none;" xml:space="preserve">I</text>
-      <text x="439" y="226" style="clip-path:url(#clipPath1); stroke:none;" xml:space="preserve">R</text>
-      <text x="452" y="226" style="clip-path:url(#clipPath1); stroke:none;" xml:space="preserve">P</text>
-      <text x="463" y="226" style="clip-path:url(#clipPath1); stroke:none;" xml:space="preserve">1</text>
+      <text x="433" y="226" style="clip-path:url(#clipPath1); stroke:none;" xml:space="preserve">IRP1</text>
       <rect x="77" y="198" width="80" style="clip-path:url(#clipPath1); fill:url(#linearGradient4); stroke:none;" rx="5" ry="5" height="40" />
       <rect x="77" y="198" width="80" style="clip-path:url(#clipPath1); fill:none; stroke-linejoin:round; stroke-width:2;" rx="5" ry="5" height="40" />
-      <text x="94" y="225" style="clip-path:url(#clipPath1); stroke:none;" xml:space="preserve">I</text>
-      <text x="100" y="225" style="clip-path:url(#clipPath1); stroke:none;" xml:space="preserve">R</text>
-      <text x="113" y="225" style="clip-path:url(#clipPath1); stroke:none;" xml:space="preserve">P</text>
-      <text x="124" y="225" style="clip-path:url(#clipPath1); stroke:none;" xml:space="preserve">2</text>
+      <text x="94" y="225" style="clip-path:url(#clipPath1); stroke:none;" xml:space="preserve">IRP2</text>
       <rect x="346" y="290.5" width="80" style="clip-path:url(#clipPath1); fill:url(#linearGradient5); stroke:none;" rx="5" ry="5" height="40" />
       <rect x="346" y="290.5" width="80" style="clip-path:url(#clipPath1); fill:none; stroke-linejoin:round; stroke-width:2;" rx="5" ry="5" height="40" />
-      <text x="376" y="318" style="clip-path:url(#clipPath1); stroke:none;" xml:space="preserve">F</text>
-      <text x="387" y="318" style="clip-path:url(#clipPath1); stroke:none;" xml:space="preserve">t</text>
+      <text x="376" y="318" style="clip-path:url(#clipPath1); stroke:none;" xml:space="preserve">Ft</text>
       <rect x="77" y="115" width="80" style="clip-path:url(#clipPath1); fill:url(#linearGradient6); stroke:none;" rx="5" ry="5" height="40" />
       <rect x="77" y="115" width="80" style="clip-path:url(#clipPath1); fill:none; stroke-linejoin:round; stroke-width:2;" rx="5" ry="5" height="40" />
-      <text x="98" y="142" style="clip-path:url(#clipPath1); stroke:none;" xml:space="preserve">F</text>
-      <text x="109" y="142" style="clip-path:url(#clipPath1); stroke:none;" xml:space="preserve">p</text>
-      <text x="122" y="142" style="clip-path:url(#clipPath1); stroke:none;" xml:space="preserve">n</text>
+      <text x="98" y="142" style="clip-path:url(#clipPath1); stroke:none;" xml:space="preserve">Fpn</text>
     </g>
     <g style="stroke-linecap:round; fill:white; text-rendering:geometricPrecision; stroke-linejoin:round; stroke:white; stroke-width:7;">
       <line x1="117" x2="117" y1="183" style="clip-path:url(#clipPath1); fill:none;" y2="175.5" />
