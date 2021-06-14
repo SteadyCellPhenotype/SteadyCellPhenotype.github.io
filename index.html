@@ -21,7 +21,12 @@
       <a href="/source/" class="w3-bar-item w3-button w3-mobile">Source</a>
       <a href="/about/" class="w3-bar-item w3-button w3-mobile">About the Authors</a>
     </div>
-    <div id="content" style="margin:auto; width:50%;">
+    <div id="content" style="margin:auto; width:55%; text-align: justify; text-justify: inter-word;">
+    <style>
+        p.line_space {
+          line-height: 1.7;
+        }
+    </style>
 
 
       <!--- Documentation portion --->
@@ -29,7 +34,7 @@
 
       <h1>Ternary networks: a brief introduction</h1>
 
-      <p>
+      <p class="line_space">
         Ternary models can represent biomolecular networks in a simple and intuitive manner by
         viewing the network in terms of a collection of logical rules. One can think of these models
         as an extension of Boolean models if simple logic is employed, but ternary models can also
@@ -41,15 +46,17 @@
         numbers as concentration levels of various proteins: <i>low</i> (0),
         <i>normal</i> (1) and <i>high</i> (2). Regardless of the labeling the interactions in the
         network can be translated into functions over the finite field on three elements and then
-        used to perform simulations and to compute the entire state space. <!-- The state space is
-        Z_3^N, what is there to compute?
+        used to perform simulations and to compute the entire state space.
+        <!-- The state space is Z_3^N, what is there to compute?
                                                                            
                                             you can adjust my wording after i finish this intro ... -->
       </p>
       
-      <p>
+      <p class="line_space">
         Formally, a ternary network is a pair \(\mathcal{T}=(G, F)\), where \(G\) is a
-        digraph <!-- It doesn't look like we use the digraph structure susbsequently. I understand
+        digraph
+        
+        <!-- It doesn't look like we use the digraph structure susbsequently. I understand
         that it's used as a heuristic, but should it be part of the definition?  How about defining
         a ternary network and then one suboridinate to a graph?
                 
@@ -67,7 +74,7 @@
         input nodes and their current state.
       </p>
       
-      <p>
+      <p class="line_space">
         Figure 1 below depicts a graph \(G\) on six species. This network is part of our previously
         published much larger network (see <a href="https://doi.org/10.1371/journal.pcbi.1005352">
         https://doi.org/10.1371/journal.pcbi.1005352</a>). We have selected the <i>iron homeostasis
@@ -93,7 +100,7 @@
         </figure>
       </center>
       
-      <p>
+      <p class="line_space">
       The next step in model building is to define local activation function \(f_v\) for each node in the network. 
       </p>
       
