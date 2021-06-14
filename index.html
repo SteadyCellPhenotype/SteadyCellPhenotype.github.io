@@ -23,9 +23,35 @@
     </div>
     <div id="content" style="margin:auto; width:55%; text-align: justify; text-justify: inter-word;">
     <style>
-        p.line_space {
+        p.line_space
+        {
           line-height: 1.7;
         }
+        
+        hr
+        {
+          display: block;
+          margin-top: 0.5em;
+          margin-bottom: 0.5em;
+          margin-left: auto;
+          margin-right: auto;
+          border: 1px solid #79809B;
+        }
+        
+        table, th, td
+        {
+          border: 1px solid black;
+          border-collapse: collapse;
+        }
+        th, td
+        {
+          padding: 5px;
+        }
+        th
+        {
+          text-align: left;
+        }
+        
     </style>
 
 
@@ -48,10 +74,13 @@
         network can be translated into functions over the finite field on three elements and then
         used to perform simulations, computations of the attractors, and  visualizations of these
         attractors and trajectories.
-        <!-- The state space is Z_3^N, what is there to compute?
+        <!-- ADAM: The state space is Z_3^N, what is there to compute?
                                                                            
-                                            you can adjust my wording after i finish this intro ... -->
+                                            JULIA: you can adjust my wording after i finish this intro ...
+                                                    Initially i just write all the ideas before deciding
+                                                    what stays/goes/edits/wording/reordering ...  -->
       </p>
+      
       
       <p class="line_space">
         An example of a biological network (or a graph) is depicted in Figure 1 below.
@@ -91,7 +120,7 @@
         a ternary network and then one suboridinate to a graph?
                 
                 JULIA: This page is is an intro to ternary models in general and I think we should be a bit more precise.
-                I though we wanted to have some general information about these models. Even if the app does
+                I thought we wanted to have some general information about these models. Even if the app does
                 not use digraphs they are part of the model building. Uninformed users should have somewhat
                 detailed introduction to that... let me know now if you think that all of this in unnecessary so that
                 I do not waist my time typing details. Make sure to outline for me what exactly you think should
@@ -110,13 +139,96 @@
         input nodes and their current state.
       </p> -->
       
+      <h3> Local activation functions </h3>
       
       <p class="line_space">
-      The next step in model building is to define local activation function for each node in the network.
+      The next step in model building is to define a local activation function for each node in the network.
       The value of each local activation function depends on its input nodes (species) and their current state.
+      This can be accomplished in multiple ways (i) using an analog to the Boolean formalism, (ii) tables and
+      (iii) function over finite field on three elements. These are not the only possibilities. Here we describe
+      the first possibility and just mention the second (our future editions will include generation of functions
+      from tables directly).  As for the third option and others, our browser based interface <i> SteadyCellPhenotype</i>
+      is capable of reading any input function over a finite field on three elements, thus allowing the user to explore
+      any type of ternary network.
       </p>
       
+      <p class="line_space">
+      A local activation function for a node \(v\) is often denoted in literature by \(f_v\). If the node \(v\)
+      has multiple input nodes \( w_1, w_2, \dots, w_k \), then this function is written as
+      \( f_v(w_1, w_2, \dots, w_k)\). Using this notation and Figure 1 activation function, for example, for LIP
+      is then \(f_{LIP}(TfR1, Fpn, Ft)\). To make notations simpler, <i>SteadyCellPhenotype</i> allows user to
+      replace bulky notation \(f_{LIP}(TfR1, Fpn, Ft)\) by simply typing \(LIP.\)
+      </p>
       
+      <hr>
+      <h5> <i> SteadyCellPhenotype</i> syntax: </h5>
+      \begin{equation}
+      LIP = <\text{your function goes here}>
+      \end{equation}
+      <hr>
+      
+      <p class="line_space">
+      Now suppose, that a node in the network only has one input
+      (e.g., IRP1 and IRP2 in Figure 1) and it is clear from the biological evidence if the regulation is positive
+      or negative. In this case, one can use simple relations as depicted by the tables below.
+      </p>
+      
+      <h4> A node \(X\) activates/induces node \(Y\): \(X \rightarrow Y \)</h4>
+          <table style="width:20%">
+            <tr>
+              <th>\(X\)</th>
+              <th>\(f_Y(X)\)</th>
+            </tr>
+            <tr>
+              <td>0</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>2</td>
+            </tr>
+          </table>
+      <h4> A node \(X\) inhibits node \(Y\): \(X \dashv Y \)</h4>
+          <table style="width:20%">
+            <tr>
+              <th>\(X\)</th>
+              <th>\(f_Y(X)\)</th>
+            </tr>
+            <tr>
+              <td>0</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>0</td>
+            </tr>
+          </table>
+      
+     
+     <p class="line_space">
+      Local activation functions depicting these tables are then:
+      \[
+     \text{activation: } f_Y(X) = X,  \quad \text{inhibition: } f_Y(X) = 2-X
+      \]
+      Since \(-1 \bmod 3 = 2\), then equation for inhibition can be written as \(f_Y(X) = 2+2X\).
+      </p>
+      
+      <hr>
+      <h5> <i> SteadyCellPhenotype</i> syntax: </h5>
+      \begin{align}
+      Y &= X \quad &\text{for activation} \\
+      Y &= \mathrm{not}(X) \quad &\text{for inhibition}
+      \end{align}
+      <hr>
+          
       <!--- Documentation portion END --->
       
       
