@@ -42,14 +42,25 @@
         <i>normal</i> (1) and <i>high</i> (2). Regardless of the labeling the interactions in the
         network can be translated into functions over the finite field on three elements and then
         used to perform simulations and to compute the entire state space. <!-- The state space is
-        Z_3^N, what is there to compute? -->
+        Z_3^N, what is there to compute?
+                                                                           
+                                            you can adjust my wording after i finish this intro ... -->
       </p>
       
       <p>
         Formally, a ternary network is a pair \(\mathcal{T}=(G, F)\), where \(G\) is a
         digraph <!-- It doesn't look like we use the digraph structure susbsequently. I understand
         that it's used as a heuristic, but should it be part of the definition?  How about defining
-        a ternary network and then one suboridinate to a graph? --> on \(n\) nodes and \[F = (f_1,
+        a ternary network and then one suboridinate to a graph?
+                
+                This page is is an intro to ternary models in general and I think we should be a bit more precise.
+                I though we wanted to have some general information about these models. Even if the app does
+                not use digraphs they are part of the model building. Uninformed users should have somewhat
+                detailed introduction to that... let me know now if you think that all of this in unnecessary so that
+                I do not waist my time typing details. Make sure to outline for me what exactly you think should
+                go into documentations.  -->
+        
+        on \(n\) nodes and \[F = (f_1,
         \dots, f_n): \{0,1,2\}^n \to \{0,1,2\}^n\] is a global transition function. Each node \(v\)
         in \(G\) takes on the values in the set \(\{0,1,2\}\) and is updated by a local activation
         function \(f_v:\{0,1,2\}^n \to \{0,1,2\}\). The value of the function \(f_v\) depends on its
