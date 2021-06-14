@@ -39,17 +39,21 @@
         <i>false/inactive</i>, 2 as <i>true/active</i>, and 1 as <i>unknown</i>, meaning that 1
         can be either true/active or false/inactive. Another possibility is to think of these
         numbers as concentration levels of various proteins: <i>low</i> (0),
-        <i>normal</i> (1) and <i>high</i> (2). Regardless of the labeling the interactions in
-        the network can be translated into functions over the finite field on three elements and
-        then used to perform simulations and to compute the entire state space.
+        <i>normal</i> (1) and <i>high</i> (2). Regardless of the labeling the interactions in the
+        network can be translated into functions over the finite field on three elements and then
+        used to perform simulations and to compute the entire state space. <!-- The state space is
+        Z_3^N, what is there to compute? -->
       </p>
       
       <p>
-        Formally, a ternary network is a pair \(\mathcal{T}=(G, F)\), where \(G\) is a digraph on
-        \(n\) nodes and \[F = (f_1, \dots, f_n): \{0,1,2\}^n \to \{0,1,2\}^n\] is a global
-        transition function. Each node \(v\) in \(G\) takes on the values in the set \(\{0,1,2\}\)
-        and is updated by a local activation function \(f_v:\{0,1,2\}^n \to \{0,1,2\}\). The value
-        of the function \(f_v\) depends on its input nodes and their current state.
+        Formally, a ternary network is a pair \(\mathcal{T}=(G, F)\), where \(G\) is a
+        digraph <!-- It doesn't look like we use the digraph structure susbsequently. I understand
+        that it's used as a heuristic, but should it be part of the definition?  How about defining
+        a ternary network and then one suboridinate to a graph? --> on \(n\) nodes and \[F = (f_1,
+        \dots, f_n): \{0,1,2\}^n \to \{0,1,2\}^n\] is a global transition function. Each node \(v\)
+        in \(G\) takes on the values in the set \(\{0,1,2\}\) and is updated by a local activation
+        function \(f_v:\{0,1,2\}^n \to \{0,1,2\}\). The value of the function \(f_v\) depends on its
+        input nodes and their current state.
       </p>
       
       <p>
