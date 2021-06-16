@@ -87,15 +87,16 @@
         An example of a biological network (or a graph) is depicted in Figure 1 below.
         This network is part of our previously published much larger network
         (see
-            <a href="https://doi.org/10.1371/journal.pcbi.1005352"> https://doi.org/10.1371/journal.pcbi.1005352</a>).
-        We have selected the <i>iron homeostasis pathway</i> to demonstrate the ideas and the terminology of
-        this section. The underlying graph of this network is also a directed graph in the sense that each species
-        is connected by an arc (edge) that has a direction, e.g., there is an arrow from TfR1 (transferrin receptor 1)
-        to LIP (labile iron pool). In addition, in this network the graph is <i>signed</i> graph, that is, each
-        connection from one species to the next is either positive (activation - blue arc with an
-        arrow head) or negative (inhibition - orange arc with a hammer head).  We would like to
-        note, that edges joining species do not have to be signed, but in most applications, majority of connections will
-        be positive or negative.
+            <a href="https://doi.org/10.1371/journal.pcbi.1005352">
+        https://doi.org/10.1371/journal.pcbi.1005352</a>).  We have selected the <i>iron homeostasis
+        pathway</i> to demonstrate the ideas and the terminology of this section. The underlying
+        graph of this network is also a directed graph in the sense that each species is connected
+        by an arc (edge) that has a direction, e.g., there is an arrow from TfR1 (transferrin
+        receptor 1) to LIP (labile iron pool). In addition, in this network the graph
+        is <i>signed</i> graph, that is, each connection from one species to the next is either
+        positive (activation - blue arc with an arrow head) or negative (inhibition - orange arc
+        with a hammer head).  We would like to note, that edges joining species do not have to be
+        signed, but in most applications, majority of connections will be positive or negative.
       </p>
       
       <center>
@@ -163,9 +164,11 @@
       
       <hr>
       <h5> <i> SteadyCellPhenotype</i> syntax: </h5>
-      \begin{equation}
-      LIP = <\text{your function goes here}>
-      \end{equation}
+      <center>
+        <tt>
+          LIP = &lt;your function goes here&gt;
+        </tt>
+      </center>
       <hr>
       
       <p class="line_space">
@@ -174,7 +177,7 @@
       or negative. In this case, one can use simple relations as depicted by the tables below.
       </p>
       
-      <h4> A node \(X\) activates/induces node \(Y\): \(X \rightarrow Y \)</h4>
+      <h4> \(X \rightarrow Y \) corresponds to a node \(X\) activating/inducing node \(Y\):</h4>
           <table style="width:20%">
             <tr>
               <th>\(X\)</th>
@@ -193,7 +196,7 @@
               <td>2</td>
             </tr>
           </table>
-      <h4> A node \(X\) inhibits node \(Y\): \(X \dashv Y \)</h4>
+          <h4> \(X \dashv Y \) corresponds to a node \(X\) inhibiting node \(Y\): </h4>
           <table style="width:20%">
             <tr>
               <th>\(X\)</th>
