@@ -178,46 +178,51 @@
         (e.g., IRP1 and IRP2 in Figure 1) and it is clear from the biological evidence if the regulation is positive
         or negative. In this case, one can use simple relations as depicted by the tables below.
       </p>
-      
-      <h4> \(X \rightarrow Y \) corresponds to a node \(X\) activating/inducing node \(Y\):</h4>
-      <table style="width:20%">
-        <tr>
-          <th>\(X\)</th>
-          <th>\(f_Y(X)\)</th>
-        </tr>
-        <tr>
-          <td>0</td>
-          <td>0</td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>1</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>2</td>
-        </tr>
-      </table>
-      <h4> \(X \dashv Y \) corresponds to a node \(X\) inhibiting node \(Y\): </h4>
-      <table style="width:20%">
-        <tr>
-          <th>\(X\)</th>
-          <th>\(f_Y(X)\)</th>
-        </tr>
-        <tr>
-          <td>0</td>
-          <td>2</td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>1</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>0</td>
-        </tr>
-      </table>
-      
+
+      <div class="w3-row">
+        <div class="w3-container w3-half">
+          <h4> \(X \rightarrow Y \), a node \(X\) activating a node \(Y\):</h4>
+          <table style="width:20%">
+            <tr>
+              <th>\(X\)</th>
+              <th>\(f_Y(X)\)</th>
+            </tr>
+            <tr>
+              <td>0</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>2</td>
+            </tr>
+          </table>
+        </div>
+        <div class="w3-container w3-half">
+          <h4> \(X \dashv Y \), a node \(X\) inhibiting a node \(Y\): </h4>
+          <table style="width:20%">
+            <tr>
+              <th>\(X\)</th>
+              <th>\(f_Y(X)\)</th>
+            </tr>
+            <tr>
+              <td>0</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>0</td>
+            </tr>
+          </table>
+        </div>
+      </div>
       
       <p class="line_space">
         Local activation functions depicting these tables are then: \[ \text{activation: } f_Y(X) =
