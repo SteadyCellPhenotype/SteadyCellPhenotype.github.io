@@ -218,14 +218,16 @@
       \[
      \text{activation: } f_Y(X) = X,  \quad \text{inhibition: } f_Y(X) = 2-X
       \]
-      Since \(-1 \bmod 3 = 2\), then equation for inhibition can be written as \(f_Y(X) = 2+2X\).
+      Since \(-1 \bmod 3 = 2\), then equation for inhibition can be written as \(f_Y(X) = 2+2X\). Note, that table for inhibition just reverses the values and can also be considered as an analog of the Boolean NOT gate. Thus, user has an option how to enter local activation function for the inhibition.
       </p>
       
       <hr>
       <h5> <i> SteadyCellPhenotype</i> syntax: </h5>
       \begin{align}
       Y &= X \quad &\text{for activation} \\
-      Y &= \mathrm{not}(X) \quad &\text{for inhibition}
+      Y &= \mathrm{not}(X) \quad &\text{for inhibition}\\
+      Y &= 2+2X \quad &\text{for inhibition}\\
+      Y &= 2-X \quad &\text{for inhibition}
       \end{align}
       <hr>
           
