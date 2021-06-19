@@ -38,19 +38,9 @@
             margin-right: auto;
             border: 1px solid #79809B;
         }
-        
-        table, th, td
-        {
-            border: 1px solid #79809B;
-            border-collapse: collapse;
-        }
-        th, td
-        {
-            padding: 5px;
-        }
-        th
-        {
-            text-align: left;
+
+        th, td {
+            border: 1px solid #ccc;
         }
         
       </style>
@@ -187,11 +177,13 @@
       <div class="w3-row">
         <div class="w3-container w3-half">
           <h4> \(X \rightarrow Y \), a node \(X\) activating a node \(Y\):</h4>
-          <table style="width:20%">
-            <tr>
-              <th>\(X\)</th>
-              <th>\(f_Y(X)\)</th>
-            </tr>
+          <table class="w3-table-all w3-centered w3-bordered w3-hoverable" style="width:60%; table-layout: fixed">
+            <thead>
+              <tr class="w3-grey">
+                <th>\(X\)</th>
+                <th>\(f_Y(X)\)</th>
+              </tr>
+            </thead>
             <tr>
               <td>0</td>
               <td>0</td>
@@ -208,11 +200,13 @@
         </div>
         <div class="w3-container w3-half">
           <h4> \(X \dashv Y \), a node \(X\) inhibiting a node \(Y\): </h4>
-          <table style="width:20%">
-            <tr>
-              <th>\(X\)</th>
-              <th>\(f_Y(X)\)</th>
-            </tr>
+          <table class="w3-table-all w3-centered w3-bordered w3-hoverable" style="width:60%; table-layout: fixed">
+            <thead>
+              <tr class="w3-grey">
+                <th>\(X\)</th>
+                <th>\(f_Y(X)\)</th>
+              </tr>
+            </thead>
             <tr>
               <td>0</td>
               <td>2</td>
