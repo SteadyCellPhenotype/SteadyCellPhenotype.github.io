@@ -48,229 +48,239 @@
 
       <!--- Documentation portion --->
 
+      <article>
 
-      <h1>Ternary networks: a brief introduction</h1>
-
-      <p class="line_space">
-        Ternary models can represent biomolecular networks in a simple and intuitive manner by
-        viewing the network in terms of a collection of logical rules. One can think of these models
-        as an extension of Boolean models if simple logic is employed, but ternary models can also
-        utilize more complicated rules and expressions. Each species in ternary network is
-        represented by three states: 0, 1, and 2. Various assignments have been suggested for the
-        states. For example, one possibility is to view 0 as
-        <i>false/inactive</i>, 2 as <i>true/active</i>, and 1 as <i>unknown</i>, meaning that 1 can
-        be either true/active or false/inactive. Another possibility is to think of these numbers as
-        concentration levels of various proteins: <i>low</i> (0),
-        <i>normal</i> (1) and <i>high</i> (2). Regardless of the labeling, the interactions in the
-        network can be translated into functions over the finite field on three elements and then
-        used to perform simulations, computations of the attractors, and  visualizations of these
-        attractors and trajectories.
-        <!-- ADAM: The state space is Z_3^N, what is there to compute?
-             
-             JULIA: you can adjust my wording after i finish this intro ...
-             Initially i just write all the ideas before deciding
-             what stays/goes/edits/wording/reordering ...  -->
-      </p>
-      
-      
-      <p class="line_space">
-        An example of a biological network (or a graph) is depicted in Figure 1 below.
-        This network is part of our previously published much larger network
-        (see
-        <a href="https://doi.org/10.1371/journal.pcbi.1005352">
-          doi:10.1371/journal.pcbi.1005352</a>).  We have selected the <i>iron homeostasis
-          pathway</i> to demonstrate the ideas and the terminology of this section. The underlying
-          graph of this network is also a directed graph in the sense that each species is connected
-          by an arc (edge) that has a direction, e.g., there is an arrow from TfR1 (transferrin
-          receptor 1) to LIP (labile iron pool). In addition, in this network the graph
-          is <i>signed</i> graph, that is, each connection from one species to the next is either
-          positive (activation - blue arc with an arrow head) or negative (inhibition - orange arc
-          with a hammer head).  We would like to note, that edges joining species do not have to be
-          signed, but in most applications, majority of connections will be positive or negative.
-      </p>
-      
-      <center>
-        <figure>
-          <img src="images/Iron_core.svg" style="max-width: 90%;"/>
-          <figcaption>
-            <b>Figure 1 - Iron Homeostasis Pathway.</b> Portion of the graph from our published
-            model <a href="https://doi.org/10.1371/journal.pcbi.1005352">
+        <h1>Ternary networks: a brief introduction</h1>
+        
+        <section>
+          <p class="line_space"> Ternary models can represent biomolecular networks in a simple and
+            intuitive manner by viewing the network in terms of a collection of logical rules. One
+            can think of these models as an extension of Boolean models if simple logic is employed,
+            but ternary models can also utilize more complicated rules and expressions. Each species
+            in ternary network is represented by three states: 0, 1, and 2. Various assignments have
+            been suggested for the states. For example, one possibility is to view 0 as
+            <i>false/inactive</i>, 2 as <i>true/active</i>, and 1 as <i>unknown</i>, meaning that 1
+            can be either true/active or false/inactive. Another possibility is to think of these
+            numbers as concentration levels of various proteins: <i>low</i> (0),
+            <i>normal</i> (1) and <i>high</i> (2). Regardless of the labeling, the interactions in
+            the network can be translated into functions over the finite field on three elements and
+            then used to perform simulations, computations of the attractors, and visualizations of
+            these attractors and trajectories.
+            <!-- ADAM: The state space is Z_3^N, what is there to compute?
+                 
+                 JULIA: you can adjust my wording after i finish this intro ...
+                 Initially i just write all the ideas before deciding
+                 what stays/goes/edits/wording/reordering ...  -->
+          </p>
+          
+          
+          <p class="line_space">
+            An example of a biological network (or a graph) is depicted in Figure 1 below.  This
+            network is part of our previously published much larger network (see
+            <cite><a href="https://doi.org/10.1371/journal.pcbi.1005352">
+                doi:10.1371/journal.pcbi.1005352</a></cite>).  We have selected the <i>iron
+                homeostasis pathway</i> to demonstrate the ideas and the terminology of this
+                section. The underlying graph of this network is also a directed graph in the sense
+                that each species is connected by an arc (edge) that has a direction, e.g., there is
+                an arrow from TfR1 (transferrin receptor 1) to LIP (labile iron pool). In addition,
+                in this network the graph is <i>signed</i> graph, that is, each connection from one
+                species to the next is either positive (activation - blue arc with an arrow head) or
+                negative (inhibition - orange arc with a hammer head).  We would like to note, that
+                edges joining species do not have to be signed, but in most applications, majority
+                of connections will be positive or negative.
+          </p>
+        </section>
+        
+        <center>
+          <figure>
+            <img src="images/Iron_core.svg" style="max-width: 90%;"/>
+            <figcaption>
+              <b>Figure 1 - Iron Homeostasis Pathway.</b> Portion of the graph from our published
+              model <cite><a href="https://doi.org/10.1371/journal.pcbi.1005352">
               doi:10.1371/journal.pcbi.1005352
-            </a>
-          </figcaption>
-        </figure>
-      </center>
-      
-      
-      <!-- DO NOT DELETE THIS YET
-           <p class="line_space">
-             Formally, a ternary network is a pair \(\mathcal{T}=(G, F)\), where \(G\) is a
-             digraph -->
-             
-             <!-- ADAM: It doesn't look like we use the digraph structure susbsequently. I understand
-                  that it's used as a heuristic, but should it be part of the definition?  How about defining
-                  a ternary network and then one suboridinate to a graph?
-                  
-                  JULIA: This page is is an intro to ternary models in general and I think we should be a bit more precise.
-                  I thought we wanted to have some general information about these models. Even if the app does
-                  not use digraphs they are part of the model building. Uninformed users should have somewhat
-                  detailed introduction to that... let me know now if you think that all of this is unnecessary so that
-                  I do not waste my time typing details. Make sure to outline for me what exactly you think should
-                  go into documentations.  -->
-             
-             <!-- DO NOT DELETE THIS YET
-                  on \(n\) nodes and
-                  
-                  \begin{equation}
-                  F = (f_1, \dots, f_n): \{0,1,2\}^n \to \{0,1,2\}^n
-                  \end{equation}
-                  
-                  is a global transition function. Each node \(v\)
-                  in \(G\) takes on the values in the set \(\{0,1,2\}\) and is updated by a local activation
-                  function \(f_v:\{0,1,2\}^n \to \{0,1,2\}\). The value of the function \(f_v\) depends on its
-                  input nodes and their current state.
-                  </p> -->
-           
-           <h3> Local activation functions </h3>
-           
-      <p class="line_space">
-        The next step in model building is to define a local activation function for each node in
-        the network.  The value of each local activation function depends on its input nodes
-        (species) and their current state.  This can be accomplished in multiple ways (i) using an
-        analog to the Boolean formalism, (ii) tables and (iii) function over finite field on three
-        elements. These are not the only possibilities. Here we describe the first possibility and
-        just mention the second (our future editions will include generation of functions from
-        tables directly).  As for the third option and others, our browser based interface <i>
-        SteadyCellPhenotype</i> is capable of reading any input function over a finite field on
-        three elements, thus allowing the user to explore any type of ternary network.
-      </p>
-      
-      <p class="line_space">
-        A local activation function for a node \(v\) is often denoted in literature by \(f_v\). If
-        the node \(v\) has multiple input nodes \( w_1, w_2, \dots, w_k \), then this function is
-        written as \( f_v(w_1, w_2, \dots, w_k)\). Using this notation and Figure 1 activation
-        function, for example, for LIP is then \(f_{LIP}(TfR1, Fpn, Ft)\). To make notations
-        simpler, <i>SteadyCellPhenotype</i> allows user to replace bulky notation \(f_{LIP}(TfR1,
-        Fpn, Ft)\) by simply typing \(LIP.\)
-      </p>
-      
-      <center>
-        <div class="w3-cell-row" style="width: 75%">
-          <div class="w3-panel w3-mobile w3-border w3-light-grey w3-leftbar"
-               style="text-align: left">
-            <h5> <i> SteadyCellPhenotype</i> syntax: </h5>
-            <center>
-              <tt>
-                LIP = &lt;your function goes here&gt;
-              </tt>
-            </center>
-          </div>
-        </div>
-      </center>
-      
-      <p class="line_space">
-        Now suppose, that a node in the network only has one input (e.g., IRP1 and IRP2 in Figure 1)
-        and it is clear from the biological evidence if the regulation is positive or negative. In
-        this case, one can use simple relations as depicted by the tables below.
-      </p>
+              </a></cite>
+            </figcaption>
+          </figure>
+        </center>
+        
+        
+        <!-- DO NOT DELETE THIS YET
+             <p class="line_space">
+               Formally, a ternary network is a pair \(\mathcal{T}=(G, F)\), where \(G\) is a
+               digraph -->
+               
+               <!-- ADAM: It doesn't look like we use the digraph structure susbsequently. I understand
+                    that it's used as a heuristic, but should it be part of the definition?  How about defining
+                    a ternary network and then one suboridinate to a graph?
+                    
+                    JULIA: This page is is an intro to ternary models in general and I think we should be a bit more precise.
+                    I thought we wanted to have some general information about these models. Even if the app does
+                    not use digraphs they are part of the model building. Uninformed users should have somewhat
+                    detailed introduction to that... let me know now if you think that all of this is unnecessary so that
+                    I do not waste my time typing details. Make sure to outline for me what exactly you think should
+                    go into documentations.  -->
+               
+               <!-- DO NOT DELETE THIS YET
+                    on \(n\) nodes and
+                    
+                    \begin{equation}
+                    F = (f_1, \dots, f_n): \{0,1,2\}^n \to \{0,1,2\}^n
+                    \end{equation}
+                    
+                    is a global transition function. Each node \(v\)
+                    in \(G\) takes on the values in the set \(\{0,1,2\}\) and is updated by a local activation
+                    function \(f_v:\{0,1,2\}^n \to \{0,1,2\}\). The value of the function \(f_v\) depends on its
+                    input nodes and their current state.
+                    </p> -->
 
-      <div class="w3-row">
-        <div class="w3-container w3-half">
-          <h4> \(X \rightarrow Y \), a node \(X\) activating a node \(Y\):</h4>
-          <table class="w3-table-all w3-centered w3-bordered w3-hoverable" style="width:60%; table-layout: fixed">
-            <thead>
-              <tr class="w3-grey">
-                <th>\(X\)</th>
-                <th>\(f_Y(X)\)</th>
-              </tr>
-            </thead>
-            <tr>
-              <td>0</td>
-              <td>0</td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>1</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>2</td>
-            </tr>
-          </table>
-        </div>
-        <div class="w3-container w3-half">
-          <h4> \(X \dashv Y \), a node \(X\) inhibiting a node \(Y\): </h4>
-          <table class="w3-table-all w3-centered w3-bordered w3-hoverable" style="width:60%; table-layout: fixed">
-            <thead>
-              <tr class="w3-grey">
-                <th>\(X\)</th>
-                <th>\(f_Y(X)\)</th>
-              </tr>
-            </thead>
-            <tr>
-              <td>0</td>
-              <td>2</td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>1</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>0</td>
-            </tr>
-          </table>
-        </div>
-      </div>
-      
-      <p class="line_space">
-        Local activation functions depicting these tables are then:
-      </p>
-        <div class="w3-row w3-center">
-          <div class="w3-container w3-half">
-            activation: \(f_Y(X) = X\),
-          </div>
-          <div class="w3-container w3-half">
-            inhibition: \(f_Y(X) = 2-X \)
-          </div>
-        </div>
-      <p class="line_space">
-        Since \(-1 \bmod 3 = 2\), then the equation for inhibition can be written as \(f_Y(X) =
-        2+2X\). Note, that the table for inhibition just reverses the values and can also be
-        considered as an analog of the Boolean NOT gate. Thus, user has an option how to enter the
-        local activation function for the inhibition.
-      </p>
-      
-      <center>
-        <div class="w3-cell-row" style="width: 75%">
-          <div class="w3-panel w3-mobile w3-border w3-light-grey w3-leftbar"
-               style="text-align: left">
-            <h5> <i> SteadyCellPhenotype</i> activation syntax: </h5>
-            <center>
-              <tt>Y = X</tt>
-            </center>
-          </div>
-        </div>
-      </center>
+             <section>
+               <h3> Local activation functions </h3>
+               
+               <p class="line_space">
+                 The next step in model building is to define a local activation function for each
+                 node in the network.  The value of each local activation function depends on its
+                 input nodes (species) and their current state.  This can be accomplished in
+                 multiple ways (i) using an analog to the Boolean formalism, (ii) tables and (iii)
+                 function over finite field on three elements. These are not the only
+                 possibilities. Here we describe the first possibility and just mention the second
+                 (our future editions will include generation of functions from tables directly).
+                 As for the third option and others, our browser based interface <i>
+                 SteadyCellPhenotype</i> is capable of reading any input function over a finite
+                 field on three elements, thus allowing the user to explore any type of ternary
+                 network.
+               </p>
+               
+               <p class="line_space">
+                 A local activation function for a node \(v\) is often denoted in literature by
+                 \(f_v\). If the node \(v\) has multiple input nodes \( w_1, w_2, \dots, w_k \),
+                 then this function is written as \( f_v(w_1, w_2, \dots, w_k)\). Using this
+                 notation and Figure 1 activation function, for example, for LIP is then
+                 \(f_{LIP}(TfR1, Fpn, Ft)\). To make notations simpler, <i>SteadyCellPhenotype</i>
+                 allows user to replace bulky notation \(f_{LIP}(TfR1, Fpn, Ft)\) by simply typing
+                 \(LIP.\)
+               </p>
+               
+               <center>
+                 <div class="w3-cell-row" style="width: 75%">
+                   <div class="w3-panel w3-mobile w3-border w3-light-grey w3-leftbar"
+                        style="text-align: left">
+                     <h5> <i> SteadyCellPhenotype</i> syntax: </h5>
+                     <center>
+                       <tt>
+                         LIP = &lt;your function goes here&gt;
+                       </tt>
+                     </center>
+                   </div>
+                 </div>
+               </center>
+               
+               <p class="line_space">
+                 Now suppose, that a node in the network only has one input (e.g., IRP1 and IRP2 in
+                 Figure 1) and it is clear from the biological evidence if the regulation is
+                 positive or negative. In this case, one can use simple relations as depicted by the
+                 tables below.
+               </p>
 
-      <center>
-        <div class="w3-cell-row" style="width: 75%">
-          <div class="w3-panel w3-mobile w3-border w3-light-grey w3-leftbar"
-               style="text-align: left">
-            <h5> <i> SteadyCellPhenotype</i> inhibition syntax: </h5>
-            <div style="text-align: center">
-              <div style="display: inline-block; text-align: left">
-                <tt>
-                  Y = not(X) <br>
-                  Y = 2+2*X <br>
-                  Y = 2-X
-                </tt>          
-              </div>
-            </div>
-          </div>
-        </div>
-      </center>
-      
+               <div class="w3-row">
+                 <div class="w3-container w3-half">
+                   <h4> \(X \rightarrow Y \), a node \(X\) activating a node \(Y\):</h4>
+                   <table class="w3-table-all w3-centered w3-bordered w3-hoverable" style="width:60%; table-layout: fixed">
+                     <thead>
+                       <tr class="w3-grey">
+                         <th>\(X\)</th>
+                         <th>\(f_Y(X)\)</th>
+                       </tr>
+                     </thead>
+                     <tr>
+                       <td>0</td>
+                       <td>0</td>
+                     </tr>
+                     <tr>
+                       <td>1</td>
+                       <td>1</td>
+                     </tr>
+                     <tr>
+                       <td>2</td>
+                       <td>2</td>
+                     </tr>
+                   </table>
+                 </div>
+                 <div class="w3-container w3-half">
+                   <h4> \(X \dashv Y \), a node \(X\) inhibiting a node \(Y\): </h4>
+                   <table class="w3-table-all w3-centered w3-bordered w3-hoverable" style="width:60%; table-layout: fixed">
+                     <thead>
+                       <tr class="w3-grey">
+                         <th>\(X\)</th>
+                         <th>\(f_Y(X)\)</th>
+                       </tr>
+                     </thead>
+                     <tr>
+                       <td>0</td>
+                       <td>2</td>
+                     </tr>
+                     <tr>
+                       <td>1</td>
+                       <td>1</td>
+                     </tr>
+                     <tr>
+                       <td>2</td>
+                       <td>0</td>
+                     </tr>
+                   </table>
+                 </div>
+               </div>
+               
+               <p class="line_space">
+                 Local activation functions depicting these tables are then:
+               </p>
+               <div class="w3-row w3-center">
+                 <div class="w3-container w3-half">
+                   activation: \(f_Y(X) = X\),
+                 </div>
+                 <div class="w3-container w3-half">
+                   inhibition: \(f_Y(X) = 2-X \)
+                 </div>
+               </div>
+               <p class="line_space">
+                 Since \(-1 \bmod 3 = 2\), then the equation for inhibition can be written as
+                 \(f_Y(X) = 2+2X\). Note, that the table for inhibition just reverses the values and
+                 can also be considered as an analog of the Boolean NOT gate. Thus, user has an
+                 option how to enter the local activation function for the inhibition.
+               </p>
+               
+               <center>
+                 <div class="w3-cell-row" style="width: 75%">
+                   <div class="w3-panel w3-mobile w3-border w3-light-grey w3-leftbar"
+                        style="text-align: left">
+                     <h5> <i> SteadyCellPhenotype</i> activation syntax: </h5>
+                     <center>
+                       <tt>Y = X</tt>
+                     </center>
+                   </div>
+                 </div>
+               </center>
+
+               <center>
+                 <div class="w3-cell-row" style="width: 75%">
+                   <div class="w3-panel w3-mobile w3-border w3-light-grey w3-leftbar"
+                        style="text-align: left">
+                     <h5> <i>SteadyCellPhenotype</i> inhibition syntax: </h5>
+                     <div style="text-align: center">
+                       <div style="display: inline-block; text-align: left">
+                         <tt>
+                           Y = not(X) <br>
+                           Y = 2+2*X <br>
+                           Y = 2-X
+                         </tt>          
+                       </div>
+                     </div>
+                   </div>
+                 </div>
+               </center>
+             </section>
+
+             
+      </article>
       <!--- Documentation portion END --->
       
       
