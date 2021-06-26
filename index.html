@@ -277,9 +277,231 @@
                    </div>
                  </div>
                </center>
-             </section>
 
+            <p class="line_space">
+            If nontraditional activation, inhibition or just any modulation is required then user may enter any
+            expression and <i>SteadyCellPhenotype</i> will evaluate this expression modulo 3.
+            </p>
+            
+            <center>
+              <div class="w3-cell-row" style="width: 75%">
+                <div class="w3-panel w3-mobile w3-border w3-light-grey w3-leftbar"
+                     style="text-align: left">
+                  <h5> <i>SteadyCellPhenotype</i> syntax (some possibilities): </h5>
+                  <div style="text-align: center">
+                    <div style="display: inline-block; text-align: left">
+                      <tt>
+                        Y = 2*X+X^2 <br>
+                        Y = 2+X^2 <br>
+                      </tt>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </center>
+            
+            <p class="line_space">
+             When a node has two inputs (TfR1, Fpn and Ft in Figure 1) then local activation function
+             can be defined using <tt> max</tt> or <tt> min</tt> operators (see Tables below) or using any expression
+             that will be computed by <i>SteadyCellPhenotype</i> modulo 3. One can use <tt>not</tt> operator inside
+             the <tt>max</tt> and <tt>min</tt>. For example, if X activates node Z but Y inhibits node Z then possible
+             update rule could be \(f_Z(X,Y)=\min(X,\mathrm{not}(Y)))\).
+             </p>
              
+             <div class="w3-row">
+               <div class="w3-container w3-half">
+                 <h4> \(f_Z(X,Y) = \) <tt>max</tt>\((X,Y)\):</h4>
+                 <table class="w3-table-all w3-centered w3-bordered w3-hoverable" style="width:60%; table-layout: fixed">
+                   <thead>
+                     <tr class="w3-grey">
+                       <th>\(X\)</th>
+                       <th>\(Y\)</th>
+                       <th>\(f_Z(X,Y)\)</th>
+                     </tr>
+                   </thead>
+                   <tr>
+                       <td>0</td>
+                       <td>0</td>
+                       <td>0</td>
+                     
+                   </tr>
+                   <tr>
+                       <td>0</td>
+                       <td>1</td>
+                       <td>1</td>
+                    
+                   </tr>
+                   <tr>
+                       <td>0</td>
+                       <td>2</td>
+                       <td>2</td>
+                    
+                   </tr>
+                   <tr>
+                       <td>1</td>
+                       <td>0</td>
+                       <td>1</td>
+                    
+                   </tr>
+                   <tr>
+                       <td>1</td>
+                       <td>1</td>
+                       <td>1</td>
+                    
+                   </tr>
+                   <tr>
+                       <td>1</td>
+                       <td>2</td>
+                       <td>2</td>
+                    
+                   </tr>
+                   <tr>
+                       <td>2</td>
+                       <td>0</td>
+                       <td>2</td>
+                    
+                   </tr>
+                   <tr>
+                       <td>2</td>
+                       <td>1</td>
+                       <td>2</td>
+                    
+                   </tr>
+                   <tr>
+                       <td>2</td>
+                       <td>2</td>
+                       <td>2</td>
+                    
+                   </tr>
+                 </table>
+               </div>
+               <div class="w3-container w3-half">
+                 <h4> \(f_Z(X,Y) = \) <tt>min</tt>\((X,Y)\): </h4>
+                 <table class="w3-table-all w3-centered w3-bordered w3-hoverable" style="width:60%; table-layout: fixed">
+                   <thead>
+                     <tr class="w3-grey">
+                         <th>\(X\)</th>
+                         <th>\(Y\)</th>
+                         <th>\(f_Z(X,Y)\)</th>
+                     </tr>
+                   </thead>
+                   <tr>
+                       <td>0</td>
+                       <td>0</td>
+                       <td>0</td>
+                     
+                   </tr>
+                   <tr>
+                       <td>0</td>
+                       <td>1</td>
+                       <td>0</td>
+                    
+                   </tr>
+                   <tr>
+                       <td>0</td>
+                       <td>2</td>
+                       <td>0</td>
+                    
+                   </tr>
+                   <tr>
+                       <td>1</td>
+                       <td>0</td>
+                       <td>0</td>
+                    
+                   </tr>
+                   <tr>
+                       <td>1</td>
+                       <td>1</td>
+                       <td>1</td>
+                    
+                   </tr>
+                   <tr>
+                       <td>1</td>
+                       <td>2</td>
+                       <td>1</td>
+                    
+                   </tr>
+                   <tr>
+                       <td>2</td>
+                       <td>0</td>
+                       <td>0</td>
+                    
+                   </tr>
+                   <tr>
+                       <td>2</td>
+                       <td>1</td>
+                       <td>1</td>
+                    
+                   </tr>
+                   <tr>
+                       <td>2</td>
+                       <td>2</td>
+                       <td>2</td>
+                    
+                   </tr>
+                 </table>
+               </div>
+             </div>
+             
+             <center>
+               <div class="w3-cell-row" style="width: 75%">
+                 <div class="w3-panel w3-mobile w3-border w3-light-grey w3-leftbar"
+                      style="text-align: left">
+                   <h5> <i>SteadyCellPhenotype</i> syntax (some possibilities): </h5>
+                   <div style="text-align: center">
+                     <div style="display: inline-block; text-align: left">
+                       <tt>
+                         Z = max(X,Y) <br>
+                         Z = max(X,not(Y)) <br>
+                         Z = max(not(X),not(Y)) <br>
+                         <br>
+                         Z = min(X,Y) <br>
+                         Z = min(X,not(Y)) <br>
+                         Z = max(not(X),not(Y)) <br>
+                         <br>
+                         Z = X+Y^2+2*X^2*Y^2
+                       </tt>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+             </center>
+             
+             <p class="line_space">
+             For nodes with more than two inputs, any composition of the <tt>max</tt>, <tt>min</tt> and <tt>not</tt>
+             operators are possible as long as the <tt>not</tt> operator is not used as a final operator on the vector,
+             meaning <tt>not(min(X,Y),Z)</tt> is not a function from \(\{0,1,2\}^3 \to \{0,1,2\}\) and cannot be evaluated
+             as a single number. Similar to the cases above, other expression can be used as well among input nodes.
+             </p>
+             
+             <h3> Example: iron homeostasis pathway </h3>
+            <p class="line_space">
+                 Using the graph in Figure 1 and some rules as described in <cite><a href="https://doi.org/10.1371/journal.pcbi.1005352">
+                     doi:10.1371/journal.pcbi.1005352 </a></cite> we can write update rules (local activation functions)
+                 for the portion of the network. Note that IRP1 has an adjusted rule (see discussion on pages 16-17 of the
+                 article mentioned above).
+            </p>
+             <center>
+               <div class="w3-cell-row" style="width: 75%">
+                 <div class="w3-panel w3-mobile w3-border w3-light-grey w3-leftbar"
+                      style="text-align: left">
+                   <h5> <i>SteadyCellPhenotype</i> syntax: </h5>
+                   <div style="text-align: center">
+                     <div style="display: inline-block; text-align: left">
+                       <tt>
+                         LIP = min(TfR1, min(not(Fpn),not(Ft))) <br>
+                         TfR1 = max(IRP1^2, IRP2) <br>
+                         Fpn = min(2+2*IRP1^2, not(IRP2)) <br>
+                         Ft = min(2+2*IRP1^2, not(IRP2)) <br>
+                         IRP1 = not(LIP) <br>
+                         IRP2 = not(LIP) <br>
+                       </tt>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+             </center>
+        </section>
       </article>
       <!--- Documentation portion END --->
       
