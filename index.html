@@ -301,7 +301,7 @@
             </center>
             
             <p class="line_space">
-             When a node has two inputs (TfR1, Fpn and Ft in Figure 1) then local activation function
+             When a node has two inputs (e.g., TfR1, Fpn and Ft in Figure 1) then local activation function
              can be defined using <tt> max</tt> or <tt> min</tt> operators (see Tables below) or using any expression
              that will be computed by <i>SteadyCellPhenotype</i> modulo 3. One can use <tt>not</tt> operator inside
              the <tt>max</tt> and <tt>min</tt>. For example, if X activates node Z but Y inhibits node Z then possible
@@ -470,9 +470,34 @@
              <p class="line_space">
              For nodes with more than two inputs, any composition of the <tt>max</tt>, <tt>min</tt> and <tt>not</tt>
              operators are possible as long as the <tt>not</tt> operator is not used as a final operator on the vector,
-             meaning <tt>not(min(X,Y),Z)</tt> is not a function from \(\{0,1,2\}^3 \to \{0,1,2\}\) and cannot be evaluated
+             meaning <tt>not(min(X,Y),Z) = (max(not(X),not(Y)),not(Z)) </tt> is not a function from \(\{0,1,2\}^3 \to \{0,1,2\}\) and cannot be evaluated
              as a single number. Similar to the cases above, other expression can be used as well among input nodes.
              </p>
+             
+             <p class="line_space">
+             <b> Note: </b> lower case, all caps, and a combination of lower case and caps can be used to enter the
+             <tt>max</tt>, <tt>min</tt> and <tt>not</tt> operators.
+             </p>
+             
+             <center>
+               <div class="w3-cell-row" style="width: 75%">
+                 <div class="w3-panel w3-mobile w3-border w3-light-grey w3-leftbar"
+                      style="text-align: left">
+                   <h5> <i>SteadyCellPhenotype</i> syntax for lower case, all caps, and a combination (some possibilities): </h5>
+                   <div style="text-align: center">
+                     <div style="display: inline-block; text-align: left">
+                       <tt>
+                         max(X,Y) <br>
+                         Max(X,not(Y)) <br>
+                         mAx(not(X),noT(Y)) <br>
+                         min(X,Y) <br>
+                         MIN(X,NOT(Y))<br>
+                       </tt>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+             </center>
              
              <h3> Example: iron homeostasis pathway </h3>
              <p class="line_space">
