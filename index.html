@@ -479,7 +479,8 @@
                  Using the graph in Figure 1 and some rules as described in <cite><a href="https://doi.org/10.1371/journal.pcbi.1005352">
                      doi:10.1371/journal.pcbi.1005352 </a></cite> we can write update rules (local activation functions)
                  for the portion of the network. Note that IRP1 has an adjusted rule (see discussion on pages 16-17 of the
-                 article mentioned above).
+                 article mentioned above). Syntax and the actual entry within an application (Figure 2) are shown below.
+                 Note, user also has an option to upload the file in text (.txt) format.
              </p>
              <center>
                <div class="w3-cell-row" style="width: 75%">
@@ -501,6 +502,17 @@
                  </div>
                </div>
              </center>
+             
+             <center>
+               <figure>
+                 <img src="images/model_entry.png" style="max-width: 90%;"/>
+                 <figcaption>
+                   <b>Figure 2 - Model entry window.</b> User can enter the model directly in the provided window, or
+                   choose a text file and then upload the file into the same window.
+                 </figcaption>
+               </figure>
+             </center>
+             
         </section>
            
         <section>
@@ -509,8 +521,25 @@
             In Boolean networks there is a single scale of change fro each node. However, in ternary networks there are
             two possible scales: a jump \(\pm1\) or \(\pm 2\). This means that a node can have a discontinuous change,
             for example from low (0) to high (2), in the single time step. If user wishes to ensure that all or some nodes
-            change by one unit only then one can select an option <b>Continuous</b> for the variables (see Figure 2)
+            change by one unit only then one can select an option <b>Continuous</b> for the variables (see Figure 3).
+            
+            Internally continuity is applied to each update rule as follows:
+            <ul>
+            <li> local activation function \(f_X\) is computed for the variable X and compared to the current state of the variable</li>
+            <li> if the current state of X is the same as \(f_X\) or differs from \(f_X\) by one unit only, then the value assigned to the variable is \(f_X\)</li>
+            <li> if X=2 and \(f_X = 0\) or X=0 and \(f_X = 2\) then the value of X at the next time step is 1. </li>
+            </ul>
             </p>
+            
+            <center>
+              <figure>
+                <img src="images/continuity_selection.png" style="max-width: 90%;"/>
+                <figcaption>
+                  <b>Figure 3 - Continuity selection.</b> User can selected all or some variables to be continuous. In this figure only TfR1, Fpn and Ft are selected not to have \(\pm2\) jumps.
+                </figcaption>
+              </figure>
+            </center>
+            
         </section>
            
         <section>
