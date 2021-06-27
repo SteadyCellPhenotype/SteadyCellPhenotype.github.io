@@ -66,11 +66,6 @@
             the network can be translated into functions over the finite field on three elements and
             then used to perform simulations, computations of the attractors, and visualizations of
             these attractors and trajectories.
-            <!-- ADAM: The state space is Z_3^N, what is there to compute?
-                 
-                 JULIA: you can adjust my wording after i finish this intro ...
-                 Initially i just write all the ideas before deciding
-                 what stays/goes/edits/wording/reordering ...  -->
           </p>
           
           
@@ -102,36 +97,6 @@
             </figcaption>
           </figure>
         </center>
-        
-        
-        <!-- DO NOT DELETE THIS YET
-             <p class="line_space">
-               Formally, a ternary network is a pair \(\mathcal{T}=(G, F)\), where \(G\) is a
-               digraph -->
-               
-               <!-- ADAM: It doesn't look like we use the digraph structure susbsequently. I understand
-                    that it's used as a heuristic, but should it be part of the definition?  How about defining
-                    a ternary network and then one suboridinate to a graph?
-                    
-                    JULIA: This page is is an intro to ternary models in general and I think we should be a bit more precise.
-                    I thought we wanted to have some general information about these models. Even if the app does
-                    not use digraphs they are part of the model building. Uninformed users should have somewhat
-                    detailed introduction to that... let me know now if you think that all of this is unnecessary so that
-                    I do not waste my time typing details. Make sure to outline for me what exactly you think should
-                    go into documentations.  -->
-               
-               <!-- DO NOT DELETE THIS YET
-                    on \(n\) nodes and
-                    
-                    \begin{equation}
-                    F = (f_1, \dots, f_n): \{0,1,2\}^n \to \{0,1,2\}^n
-                    \end{equation}
-                    
-                    is a global transition function. Each node \(v\)
-                    in \(G\) takes on the values in the set \(\{0,1,2\}\) and is updated by a local activation
-                    function \(f_v:\{0,1,2\}^n \to \{0,1,2\}\). The value of the function \(f_v\) depends on its
-                    input nodes and their current state.
-                    </p> -->
 
              <section>
                <h3> Local activation functions </h3>
@@ -470,8 +435,9 @@
              <p class="line_space">
              For nodes with more than two inputs, any composition of the <tt>max</tt>, <tt>min</tt> and <tt>not</tt>
              operators are possible as long as the <tt>not</tt> operator is not used as a final operator on the vector,
-             meaning <tt>not(min(X,Y),Z) = (max(not(X),not(Y)),not(Z)) </tt> is not a function from \(\{0,1,2\}^3 \to \{0,1,2\}\) and cannot be evaluated
-             as a single number. Similar to the cases above, other expression can be used as well among input nodes.
+             meaning <tt>not(min(X,Y),Z) = (max(not(X),not(Y)),not(Z)) </tt> is not a function from
+             \(\{0,1,2\}^3 \to \{0,1,2\}\) and cannot be evaluated as a single number. Similar to the cases above,
+             other expression can be used as well among input nodes.
              </p>
              
              <p class="line_space">
@@ -501,11 +467,12 @@
              
              <h3> Example: iron homeostasis pathway </h3>
              <p class="line_space">
-                 Using the graph in Figure 1 and some rules as described in <cite><a href="https://doi.org/10.1371/journal.pcbi.1005352">
-                     doi:10.1371/journal.pcbi.1005352 </a></cite> we can write update rules (local activation functions)
-                 for the portion of the network. Note that IRP1 has an adjusted rule (see discussion on pages 16-17 of the
-                 article mentioned above). Syntax and the actual entry within an application (Figure 2) are shown below.
-                 Note, user also has an option to upload the file in text (.txt) format.
+                 Using the graph in Figure 1 and some rules as described in
+                 <cite><a href="https://doi.org/10.1371/journal.pcbi.1005352"> doi:10.1371/journal.pcbi.1005352 </a></cite>
+                 we can write update rules (local activation functions) for the portion of the network. Note that IRP1
+                 has an adjusted rule (see discussion on pages 16-17 of the article mentioned above). Syntax and the
+                 actual entry within an application (Figure 2) are shown below. Note, user also has an option to upload the
+                 file in text (.txt) format.
              </p>
              <center>
                <div class="w3-cell-row" style="width: 75%">
