@@ -437,7 +437,7 @@
              operators are possible as long as the <tt>not</tt> operator is not used as a final operator on the vector,
              meaning <tt>not(min(X,Y),Z) = (max(not(X),not(Y)),not(Z)) </tt> is not a function from
              \(\{0,1,2\}^3 \to \{0,1,2\}\) and cannot be evaluated as a single number. Similar to the cases above,
-             other expression can be used as well among input nodes. Internally, <tt>max</tt> and <tt>min</tt> operators
+             other expressions can be used as well among input nodes. Internally, <tt>max</tt> and <tt>min</tt> operators
              are encoded as polynomials of degree two:
              
              <div class="w3-row w3-center">
@@ -510,7 +510,8 @@
                  <img src="images/model_entry.png" style="max-width: 90%;"/>
                  <figcaption>
                    <b>Figure 2 - Model entry window.</b> User can enter the model directly in the provided window, or
-                   choose a text file and then upload the file into the same window.
+                   choose a text file and then upload the file into the same window. Once model is entered, user may select
+                   <b>Set Model Options</b> button that will take the user to the window similar in Figure 3 below.
                  </figcaption>
                </figure>
              </center>
@@ -550,6 +551,28 @@
              In the current version of the <i>SteadyCellPhenotype</i> all nodes in the network are updated simultaneously,
              which is called a <i>synchronous</i> update schedule. This implies that each state of the network
              will belong to the basin of attraction of only one attractor: fixed point or cyclic attractor.
+             </p>
+             
+             <p class="line_space">
+             <b>Fixed Points</b> can be computed using two different options.
+             <ul>
+                 <li> Selecting radio-button <b>Find all fixed points</b> (one can see this button in Figure 3).
+                     In this case <i>SteadyCellPhenotype</i> will compute all fixed points analytically using
+                     <cite><a href="http://www2.macaulay2.com/Macaulay2/Downloads/"> Macaulay2</a></cite>, which can be downloaded
+                     from here
+                     <cite><a href="http://www2.macaulay2.com/Macaulay2/Downloads/"> Downloads.</a></cite>
+                     We would like to note that option to find all fixed points will only work after the user
+                     installs Macaulay2. If the model has no fixed points then <i>Error in input</i> with the text
+                     <tt> Error running Macaulay2!</tt> will be displayed.
+                 </li>
+                 <li> Another option to find <i>some</i> fixed points is by selecting radio-button
+                     <b>Sample fixed points and cycles</b>. Here the user can selects from the dropdown list the number
+                     of random initial states from which the trajectory will be computed.
+                 </li>
+             </ul>
+             <b>Cyclic attractors</b> can be computed by selecting radio-button <b>Sample fixed points and cycles</b> and
+             the number of initial random states. <i>If the model is small and selected number from the dropdown list is
+             larger than the state space, then complete state space search will be performed.</i>
              </p>
         </section>
       </article>
