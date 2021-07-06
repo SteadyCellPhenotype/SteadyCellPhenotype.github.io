@@ -1,0 +1,6 @@
+LIP = min(TfR1,min(not(Fpn),not(Ft)))
+TfR1 = max(IRP1^2,IRP2)
+Fpn = min(2+2*IRP1^2,not(IRP2))
+Ft = min(2+2*IRP1^2,not(IRP2))
+IRP1 = not(LIP)
+IRP2 = not(LIP)
