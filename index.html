@@ -607,7 +607,7 @@
             <ul>
               <li> Selecting the radio-button <b>Find all fixed points</b> (see Figure 3).  In this
                 case <i>SteadyCellPhenotype</i> will compute all fixed points analytically using
-                <cite><a href="http://www2.macaulay2.com/Macaulay2/Downloads/">Macaulay2</a></cite>, which can be downloaded
+                <cite><a href="http://www2.macaulay2.com/Macaulay2/">Macaulay2</a></cite>, which can be downloaded
                 from here
                 <cite><a href="http://www2.macaulay2.com/Macaulay2/Downloads/">Downloads.</a></cite>
                 Note that option to find all fixed points will only work after the user installs
@@ -635,6 +635,54 @@
             samples from the dropdown list is larger than the state space (only possible for
             relatively small models), then a complete state space search will be performed.</i>
           </p>
+          
+          <p class="line_space">
+          When the radio-button <b>Sample fixed points and cycles</b> is selected a lengths of each
+          trajectory leading to an attractor for each random start is recorded. A histogram, summarizing
+          a distribution of the lengths of paths, is displayed below each attractor (see Figure 4).
+          Additionally, user can select <b>Visualize</b> option for all or some variables
+          (one can see this option in Figure 3). When this option is selected then <i>SteadyCellPhenotype</i>
+          will collect additional statistics. In particular, for each random starting state a trajectory (path)
+          is recorded. The collection of all these trajectories are then aligned <i>on the right</i>
+          to ensure that they all arrive at the same time at a fixed point or a specified point on their
+          cyclic attractor. The image in Figure 5 displays the mean value and standard deviation of the
+          variable states along these trajectories. This feature is useful in demonstrating, for example,
+          if biological species of interest (LIP) had a cyclic behavior before entering a fixed point.
+          
+          
+          <center>
+            <figure>
+              <img src="images/length_of_path.png" style="max-width: 90%;"/>
+              <figcaption>
+                <b>Figure 4 - Path length.</b> A cyclic attractor of length 6 for the model in Figure 1.
+                Since the size of the model is small, complete state space search was performed. Numbers
+                below the attractor (48.8% and Count 356) indicate how many states out of \(3^6 = 729\)
+                belong to the basin of this attractor.
+              </figcaption>
+            </figure>
+          </center>
+          
+          <center>
+            <figure>
+              <img src="images/phased_envelope.png" style="max-width: 90%;"/>
+              <figcaption>
+                <b>Figure 5 - Phased Envelope.</b> These images were generated using the entire model (24 nodes)
+                from <cite><a href="https://doi.org/10.1371/journal.pcbi.1005352">
+                    doi:10.1371/journal.pcbi.1005352
+                </a></cite>
+              </figcaption>
+            </figure>
+          </center>
+        
+          </p>
+        </section>
+        
+        <section>
+            <h3> Tracing a Specific State </h3>
+        </section>
+        
+        <section>
+            <h3> Knockout and Overexpression Experiments </h3>
         </section>
       </article>
       <!--- Documentation portion END --->
