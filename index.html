@@ -44,8 +44,7 @@
         }
         
       </style>
-
-
+      
       <!--- Documentation portion --->
 
       <article>
@@ -450,9 +449,6 @@
             used as well among input nodes. Internally, <tt>max</tt> and <tt>min</tt> operators are
             recoded as polynomials of degree four when necessary for algebraic computations:
             
-            <!-- JC:    did I say degree two in here? Unreal! I guess I was thinking about exponent
-                        of each variable being 2 or less ... but it came out wrong. -->
-            
             <div class="w3-row w3-center w3-mobile">
               <div class="w3-container w3-half">
                 \(\max(x,y) = x^2y^2+x^2y+xy^2+2xy+x+y\),
@@ -496,8 +492,9 @@
             <div class="w3-cell-row" style="width: 75%">
               <div class="w3-panel w3-mobile w3-border w3-light-grey w3-leftbar"
                    style="text-align: left">
-                <h5> <i>SteadyCellPhenotype</i> syntax for variable names. Once variable name is assigned
-                    (e.g., <b>LIP</b>) then exactly the same expression must be used for all update functions:
+                <h5> <i>SteadyCellPhenotype</i> syntax for variable names. Once a variable name is
+                    assigned (e.g., <b>LIP</b>) then exactly the same expression must be used for
+                    all update functions:
                 </h5>
                 <div style="text-align: center">
                   <div style="display: inline-block; text-align: left">
@@ -605,11 +602,11 @@
           <p class="line_space">
             <b>Fixed Points</b> can be computed using two different options.
             <ul>
-              <li> Selecting the radio-button <b>Find all fixed points</b> (see Figure 3).  In this
-                case <i>SteadyCellPhenotype</i> will compute all fixed points analytically using
+              <li> Selecting the radio-button <span class="w3-tag w3-round w3-us-blue">Find all
+                fixed points</span> (see Figure 3).  In this case <i>SteadyCellPhenotype</i> will
+                compute all fixed points analytically using
                 <cite><a href="http://www2.macaulay2.com/Macaulay2/">Macaulay2</a></cite>, which can be downloaded
-                from here
-                <cite><a href="http://www2.macaulay2.com/Macaulay2/Downloads/">Downloads.</a></cite>
+                <cite><a href="http://www2.macaulay2.com/Macaulay2/Downloads/">here</a></cite>.
                 Note that option to find all fixed points will only work after the user installs
                 Macaulay2. If the model has no fixed points then <i>Error in input</i> with the text
                 <tt>Error running Macaulay2!</tt> will be displayed.
@@ -625,21 +622,25 @@
                 
                 -->
               </li>
-              <li> Another option to find <i>some</i> fixed points is by selecting radio-button
-                <b>Sample fixed points and cycles</b>. Here the user can selects from the dropdown
-                list the number of random initial states from which the trajectory will be computed.
+              <li> Another option to find <i>some</i> of the fixed points is by selecting the
+              radio-button <span class="w3-tag w3-round w3-us-blue">Sample fixed points and
+              cycles</span>. Here the user can selects from the dropdown list the number of random
+              initial states from which the trajectory will be computed.
               </li>
             </ul>
-            <b>Cyclic attractors</b> can be computed by selecting the radio-button <b>Sample fixed
-            points and cycles</b> and the number of initial random states. <i>If the number of
-            samples from the dropdown list is larger than the state space (only possible for
-            relatively small models), then a complete state space search will be performed.</i>
+            <b>Cyclic attractors</b> can be computed by selecting the
+              radio-button <span class="w3-tag w3-round w3-us-blue">Sample fixed points and
+              cycles</span> and the number of initial random states. <i>If the number of samples
+              from the dropdown list is larger than the state space (only possible for relatively
+              small models), then a complete state space search will be performed.</i>
           </p>
           
           <p class="line_space">
-          When the radio-button <b>Sample fixed points and cycles</b> is selected, a length of each
-          trajectory leading to an attractor for each random start is recorded. A histogram, summarizing
-          a distribution of the lengths of paths, is displayed below each attractor (see Figure 4).
+            When the radio-button
+            <span class="w3-tag w3-round w3-us-blue">Sample fixed points and cycles</span> is
+            selected, a length of each trajectory leading to an attractor for each random start is
+            recorded. A histogram, summarizing a distribution of the lengths of paths, is displayed
+            below each attractor (see Figure 4).
           
           <center>
             <figure>
@@ -653,22 +654,24 @@
             </figure>
           </center>
           
-          Additionally, user can select <b>Visualize</b> option for all or some variables
-          (one can see this option in Figure 3). When this option is selected then <i>SteadyCellPhenotype</i>
-          will collect additional statistics. In particular, for each random starting state a trajectory (path)
-          is recorded. The collection of all these trajectories are then aligned <i>on the right</i>
-          to ensure that they all arrive at the same time at a fixed point or a specified point on their
-          cyclic attractor. The image in Figure 5 displays the mean value and standard deviation of the
-          variable states along these trajectories. This feature is useful in demonstrating, for example,
-          if biological species of interest (LIP) had a cyclic behavior before entering a fixed point.
+          Additionally, user can select the
+          <span class="w3-tag w3-round w3-us-blue">Visualize</span> option for all or some of the
+          variables (one can see this option in Figure 3). When this option is selected
+          then <i>SteadyCellPhenotype</i> will collect additional statistics. In particular, for
+          each random starting state a trajectory (path) is recorded. The collection of all these
+          trajectories are then aligned <i>on the right</i> to ensure that they all arrive at the
+          same time at the fixed point or at a specified point on their cyclic attractor. The image
+          in Figure 5 displays the mean value and standard deviation of the variable states along
+          these trajectories. This feature is useful in demonstrating, for example, if biological
+          species of interest (LIP) had a cyclic behavior before entering a fixed point.
           
           <center>
             <figure>
               <img src="images/phased_envelope.png" style="max-width: 90%;"/>
               <figcaption>
-                <b>Figure 5 - Phased Envelope.</b> These images were generated using the entire model (24 nodes)
-                from <cite><a href="https://doi.org/10.1371/journal.pcbi.1005352">
-                    doi:10.1371/journal.pcbi.1005352
+                <b>Figure 5 - Phased Envelope.</b> These images were generated using the entire
+                model (24 nodes) from <cite><a href="https://doi.org/10.1371/journal.pcbi.1005352">
+                doi:10.1371/journal.pcbi.1005352
                 </a></cite>
               </figcaption>
             </figure>
@@ -678,11 +681,11 @@
         </section>
         
         <section>
-            <h3> Tracing a Specific State </h3>
+          <h3> Tracing a Specific State </h3>
         </section>
         
         <section>
-            <h3> Knockout and Overexpression Experiments </h3>
+          <h3> Knockout and Overexpression Experiments </h3>
         </section>
       </article>
       <!--- Documentation portion END --->
