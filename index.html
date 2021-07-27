@@ -641,7 +641,8 @@
             <span class="w3-tag w3-round w3-us-blue">Sample fixed points and cycles</span> is
             selected, a length of each trajectory leading to an attractor for each random start is
             recorded. A histogram, summarizing a distribution of the lengths of paths, is displayed
-            below each attractor (see Figure 4).
+            below each attractor (see Figure 4). Attractors can be saved in a tab-separated format.
+            All images also have save button options.
           
           <center>
             <figure>
@@ -655,6 +656,7 @@
             </figure>
           </center>
           
+          <p class="line_space">
           Additionally, user can select the
           <span class="w3-tag w3-round w3-us-blue">Visualize</span> option for all or some of the
           variables (one can see this option in Figure 3). When this option is selected
@@ -665,6 +667,7 @@
           in Figure 5 displays the mean value and standard deviation of the variable states along
           these trajectories. This feature is useful in demonstrating, for example, if biological
           species of interest (LIP) had a cyclic behavior before entering a fixed point.
+          </p>
           
           <center>
             <figure>
@@ -683,9 +686,38 @@
         
         <section>
           <h3> Tracing a Specific State </h3>
-
-          <img src="images/trace-state-config.png" style="max-width: 90%;"/>
-
+          
+          <p class="line_space">
+            <i>SteadyCellPhenotype</i> offers an option to trace a specific state by selecting
+            <b>Trace state(s)</b> radio button. This allows a user to investigate the evolution of interesting
+            states and visualize trajectories via a graph. Under the
+            <span class="w3-tag w3-round w3-us-blue">Initial State</span> option user can choose
+            from the dropdown list values <tt> 0, 1, 2, or *</tt> (see Figure 6).
+            The symbol asterisk (*) means that all states for this particular species will be considered.
+            If user would like to investigate nearby states around a specific point of interest, then checking
+            the box <b>Include nearby states</b> will include evolution of trajectories from states that are
+            the Hamming distance one from the specified point, i.e., all states that differ from the
+            specified state by one unit for exactly one species.
+            
+            <i>SteadyCellPhenotype</i> will display a heatmap that records evolution of trajectories and a
+            directed graph summarizing these paths (see Figure 7). Option to save the graph and the heatmap
+            are available. The values in the heatmap will be saved in a tab-separated format.
+          </p>
+          
+          
+          <center>
+              <figure>
+                  <img src="images/trace-state-config2.png" style="max-width: 90%;"/>
+                  <figcaption>
+                      <b>Figure 6 - Trace state(s).</b> States with varying TfR1 will be traced and nearby
+                      stets will be included as well. The output of the selection is shown in Figure 7 below.
+                      Notice no continuity was selected.
+                  </figcaption>
+              </figure>
+          </center>
+          
+          <center>
+              <figure>
           <div class="w3-row">
             <div class="w3-col m6 l6">
               <img src="images/trace-state-table.png" style="max-width: 90%;"/>
@@ -694,8 +726,36 @@
               <svg viewBox="-100,-105.85126049662398,204.77840104913082,200" xoverflow="visible" width="100%" style="max-width: 90%; height: 50vh;"><defs><marker id="arrow" viewBox="0 0 10 10" refX="15" refY="5" orient="auto-start-reverse" markerWidth="6" markerHeight="6" xoverflow="visible"><path d="M 0 0 L 10 5 L 0 10 z"></path></marker></defs><g stroke="#666" stroke-opacity="0.9"><line stroke-width="1.5" marker-end="url(#arrow)" x1="-87.69228707352686" y1="25.25855759646455" x2="-54.81447164327336" y2="21.732575318097943"></line><line stroke-width="1.5" marker-end="url(#arrow)" x1="-89.92733573096147" y1="-40.626218700084756" x2="-70.07309147289409" y2="-65.09645599365662"></line><line stroke-width="1.5" marker-end="url(#arrow)" x1="54.926052351768654" y1="-5.195405528448257" x2="57.23574042259611" y2="-38.84783053287181"></line><line stroke-width="1.5" marker-end="url(#arrow)" x1="26.684766434760117" y1="-37.24033220422636" x2="57.23574042259611" y2="-38.84783053287181"></line><line stroke-width="1.5" marker-end="url(#arrow)" x1="27.77986464554087" y1="-95.85126049662398" x2="55.37777275498098" y2="-82.02784995435589"></line><line stroke-width="1.5" marker-end="url(#arrow)" x1="26.05830702218617" y1="13.107759420201887" x2="51.93722194043763" y2="32.7012078229007"></line><line stroke-width="1.5" marker-end="url(#arrow)" x1="57.23574042259611" y1="-38.84783053287181" x2="85.15150263978266" y2="-50.714611902933406"></line><line stroke-width="1.5" marker-end="url(#arrow)" x1="-36.4907988766828" y1="51.84099580191394" x2="-54.81447164327336" y2="21.732575318097943"></line><line stroke-width="1.5" marker-end="url(#arrow)" x1="-48.27110573523179" y1="56.63981681555032" x2="-54.81447164327336" y2="21.732575318097943"></line><line stroke-width="1.5" marker-end="url(#arrow)" x1="85.15150263978266" y1="-50.714611902933406" x2="94.85106531816936" y2="-21.143698564687828"></line><line stroke-width="1.5" marker-end="url(#arrow)" x1="-70.07309147289409" y1="-65.09645599365662" x2="-41.56600778874067" y2="-52.21925414293377"></line><line stroke-width="1.5" marker-end="url(#arrow)" x1="64.37341659024534" y1="63.82127103220012" x2="51.93722194043763" y2="32.7012078229007"></line><line stroke-width="1.5" marker-end="url(#arrow)" x1="-41.56600778874067" y1="-52.21925414293377" x2="-45.026204558211596" y2="-17.964742637566165"></line><line stroke-width="1.5" marker-end="url(#arrow)" x1="39.202524137429" y1="2.944200049392543" x2="51.93722194043763" y2="32.7012078229007"></line><line stroke-width="1.5" marker-end="url(#arrow)" x1="-44.471480237180884" y1="-83.0867648895863" x2="-41.56600778874067" y2="-52.21925414293377"></line><line stroke-width="1.5" marker-end="url(#arrow)" x1="-34.28958169453441" y1="-3.6002081762898497" x2="-54.81447164327336" y2="21.732575318097943"></line><line stroke-width="1.5" marker-end="url(#arrow)" x1="38.657947758601935" y1="65.30044892266018" x2="51.93722194043763" y2="32.7012078229007"></line><line stroke-width="1.5" marker-end="url(#arrow)" x1="81.52721673491327" y1="19.623276506529898" x2="51.93722194043763" y2="32.7012078229007"></line><line stroke-width="1.5" marker-end="url(#arrow)" x1="-61.501982138875036" y1="-9.469317131088046" x2="-54.81447164327336" y2="21.732575318097943"></line><line stroke-width="1.5" marker-end="url(#arrow)" x1="-60.11832691239644" y1="56.10890299028941" x2="-54.81447164327336" y2="21.732575318097943"></line><line stroke-width="1.5" marker-end="url(#arrow)" x1="77.30444432869004" y1="53.33719863404905" x2="51.93722194043763" y2="32.7012078229007"></line><line stroke-width="1.5" marker-end="url(#arrow)" x1="-54.81447164327336" y1="21.732575318097943" x2="-79.21999311720248" y2="-8.732087494148281"></line><line stroke-width="1.5" marker-end="url(#arrow)" x1="29.683242770134438" y1="-65.54960304899163" x2="3.8693257278841733" y2="-81.4755815621185"></line><line stroke-width="1.5" marker-end="url(#arrow)" x1="-24.165062549247637" y1="9.418286704504567" x2="-54.81447164327336" y2="21.732575318097943"></line><line stroke-width="1.5" marker-end="url(#arrow)" x1="-72.18517227768412" y1="50.69687792134957" x2="-54.81447164327336" y2="21.732575318097943"></line><line stroke-width="1.5" marker-end="url(#arrow)" x1="-45.026204558211596" y1="-17.964742637566165" x2="-54.81447164327336" y2="21.732575318097943"></line><line stroke-width="1.5" marker-end="url(#arrow)" x1="94.85106531816936" y1="-21.143698564687828" x2="73.70356298208257" y2="3.7114156982490316"></line><line stroke-width="1.5" marker-end="url(#arrow)" x1="19.819701329656414" y1="30.958787931829676" x2="51.93722194043763" y2="32.7012078229007"></line><line stroke-width="1.5" marker-end="url(#arrow)" x1="51.93722194043763" y1="32.7012078229007" x2="54.926052351768654" y2="-5.195405528448257"></line><line stroke-width="1.5" marker-end="url(#arrow)" x1="28.48252102063174" y1="59.05513734715239" x2="51.93722194043763" y2="32.7012078229007"></line><line stroke-width="1.5" marker-end="url(#arrow)" x1="-3.798154472724002" y1="-51.33796591240542" x2="3.8693257278841733" y2="-81.4755815621185"></line><line stroke-width="1.5" marker-end="url(#arrow)" x1="73.70356298208257" y1="3.7114156982490316" x2="51.93722194043763" y2="32.7012078229007"></line><line stroke-width="1.5" marker-end="url(#arrow)" x1="-82.07020072703682" y1="40.96936836483622" x2="-54.81447164327336" y2="21.732575318097943"></line><line stroke-width="1.5" marker-end="url(#arrow)" x1="-22.608114573500192" y1="26.574444473063284" x2="-54.81447164327336" y2="21.732575318097943"></line><line stroke-width="1.5" marker-end="url(#arrow)" x1="-85.09738650331056" y1="9.093268187257591" x2="-54.81447164327336" y2="21.732575318097943"></line><line stroke-width="1.5" marker-end="url(#arrow)" x1="-79.21999311720248" y1="-8.732087494148281" x2="-89.92733573096147" y2="-40.626218700084756"></line><line stroke-width="1.5" marker-end="url(#arrow)" x1="3.8693257278841733" y1="-81.4755815621185" x2="-3.798154472724002" y2="-51.33796591240542"></line><line stroke-width="1.5" marker-end="url(#arrow)" x1="21.401341761618763" y1="47.22756470960752" x2="51.93722194043763" y2="32.7012078229007"></line><line stroke-width="1.5" marker-end="url(#arrow)" x1="-22.444748724806185" y1="-76.37485909685165" x2="-41.56600778874067" y2="-52.21925414293377"></line><line stroke-width="1.5" marker-end="url(#arrow)" x1="51.34312112193908" y1="67.0826622905518" x2="51.93722194043763" y2="32.7012078229007"></line><line stroke-width="1.5" marker-end="url(#arrow)" x1="-27.686009720509183" y1="42.064431363808964" x2="-54.81447164327336" y2="21.732575318097943"></line><line stroke-width="1.5" marker-end="url(#arrow)" x1="84.14848259741477" y1="37.23745534446073" x2="51.93722194043763" y2="32.7012078229007"></line></g><g stroke="#fff" stroke-width="1.5"><circle r="5" fill="#f28e2c" cx="-60.11832691239644" cy="56.10890299028941"><title>0</title></circle><circle r="5" fill="#e15759" cx="-54.81447164327336" cy="21.732575318097943"><title>1</title></circle><circle r="5" fill="#e15759" cx="-79.21999311720248" cy="-8.732087494148281"><title>2</title></circle><circle r="5" fill="#e15759" cx="-89.92733573096147" cy="-40.626218700084756"><title>3</title></circle><circle r="5" fill="#e15759" cx="-70.07309147289409" cy="-65.09645599365662"><title>4</title></circle><circle r="5" fill="#e15759" cx="-41.56600778874067" cy="-52.21925414293377"><title>5</title></circle><circle r="5" fill="#e15759" cx="-45.026204558211596" cy="-17.964742637566165"><title>6</title></circle><circle r="5" fill="#f28e2c" cx="-36.4907988766828" cy="51.84099580191394"><title>7</title></circle><circle r="5" fill="#f28e2c" cx="-82.07020072703682" cy="40.96936836483622"><title>8</title></circle><circle r="5" fill="#f28e2c" cx="-34.28958169453441" cy="-3.6002081762898497"><title>9</title></circle><circle r="5" fill="#f28e2c" cx="29.683242770134438" cy="-65.54960304899163"><title>10</title></circle><circle r="5" fill="#e15759" cx="3.8693257278841733" cy="-81.4755815621185"><title>11</title></circle><circle r="5" fill="#e15759" cx="-3.798154472724002" cy="-51.33796591240542"><title>12</title></circle><circle r="5" fill="#f28e2c" cx="-24.165062549247637" cy="9.418286704504567"><title>13</title></circle><circle r="5" fill="#f28e2c" cx="38.657947758601935" cy="65.30044892266018"><title>14</title></circle><circle r="5" fill="#e15759" cx="51.93722194043763" cy="32.7012078229007"><title>15</title></circle><circle r="5" fill="#e15759" cx="54.926052351768654" cy="-5.195405528448257"><title>16</title></circle><circle r="5" fill="#e15759" cx="57.23574042259611" cy="-38.84783053287181"><title>17</title></circle><circle r="5" fill="#e15759" cx="85.15150263978266" cy="-50.714611902933406"><title>18</title></circle><circle r="5" fill="#e15759" cx="94.85106531816936" cy="-21.143698564687828"><title>19</title></circle><circle r="5" fill="#e15759" cx="73.70356298208257" cy="3.7114156982490316"><title>20</title></circle><circle r="5" fill="#f28e2c" cx="-27.686009720509183" cy="42.064431363808964"><title>21</title></circle><circle r="5" fill="#f28e2c" cx="26.684766434760117" cy="-37.24033220422636"><title>22</title></circle><circle r="5" fill="#f28e2c" cx="39.202524137429" cy="2.944200049392543"><title>23</title></circle><circle r="5" fill="#f28e2c" cx="-72.18517227768412" cy="50.69687792134957"><title>24</title></circle><circle r="5" fill="#f28e2c" cx="19.819701329656414" cy="30.958787931829676"><title>25</title></circle><circle r="5" fill="#f28e2c" cx="84.14848259741477" cy="37.23745534446073"><title>26</title></circle><circle r="5" fill="#f28e2c" cx="77.30444432869004" cy="53.33719863404905"><title>27</title></circle><circle r="5" fill="#f28e2c" cx="-44.471480237180884" cy="-83.0867648895863"><title>28</title></circle><circle r="5" fill="#f28e2c" cx="28.48252102063174" cy="59.05513734715239"><title>29</title></circle><circle r="5" fill="#f28e2c" cx="-22.608114573500192" cy="26.574444473063284"><title>30</title></circle><circle r="5" fill="#f28e2c" cx="27.77986464554087" cy="-95.85126049662398"><title>31</title></circle><circle r="5" fill="#e15759" cx="55.37777275498098" cy="-82.02784995435589"><title>32</title></circle><circle r="5" fill="#f28e2c" cx="21.401341761618763" cy="47.22756470960752"><title>33</title></circle><circle r="5" fill="#f28e2c" cx="-87.69228707352686" cy="25.25855759646455"><title>34</title></circle><circle r="5" fill="#f28e2c" cx="51.34312112193908" cy="67.0826622905518"><title>35</title></circle><circle r="5" fill="#f28e2c" cx="81.52721673491327" cy="19.623276506529898"><title>36</title></circle><circle r="5" fill="#f28e2c" cx="26.05830702218617" cy="13.107759420201887"><title>37</title></circle><circle r="5" fill="#f28e2c" cx="-22.444748724806185" cy="-76.37485909685165"><title>38</title></circle><circle r="5" fill="#f28e2c" cx="64.37341659024534" cy="63.82127103220012"><title>39</title></circle><circle r="5" fill="#f28e2c" cx="-48.27110573523179" cy="56.63981681555032"><title>40</title></circle><circle r="5" fill="#f28e2c" cx="-85.09738650331056" cy="9.093268187257591"><title>41</title></circle><circle r="5" fill="#f28e2c" cx="-61.501982138875036" cy="-9.469317131088046"><title>42</title></circle></g></svg>
             </div>
           </div>
-          <!-- - for small model, complete search  -->
+          <caption>
+              <b>Figure 7:</b> Heatmaps (left image - partial output) displaying evolution of trajectories
+              from a specified state. States are numbered and correspond to circles of the digraph (right image).
+              Attractors are depicted by red circles.
+          </caption>
+          </figure>
+          </center>
           
+          <p class="line_space">
+          <b>Note:</b> for small models selecting asterisk (*) for all species
+              will result in the computation of the entire state space. Using this option for large
+              models is not advisable. Complete state space for our running example is displayed
+              in Figure 8 below.
+          </p>
+          <center>
+              <figure>
+                  <img src="images/iron_core_state_space_cont.pdf" style="max-width: 100%;"/>
+                  <figcaption>
+                      <b>Figure 8: </b> Complete state space of iron model in Figure 1. Option
+                      "continuous" was selected for all species except LIP (see <cite><a href="https://doi.org/10.1371/journal.pcbi.1005352">
+                          doi:10.1371/journal.pcbi.1005352
+                          </a></cite> for explanations). Red circles are attractors.
+                      Model has one fixed point
+                      and two cyclic attractors of length 6.
+                      <!-- - JC: red circles are barely visible and bland in too mach with orange.
+                      I think we should consider different colors or larger red circles.
+                      Sorry, I am still pushing that because for large graphs it is hard to see attractors. -->
+                  </figcaption>
+              </figure>
+          </center>
         </section>
         
         <section>
