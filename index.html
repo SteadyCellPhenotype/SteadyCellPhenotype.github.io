@@ -609,8 +609,8 @@
                 <cite><a href="http://www2.macaulay2.com/Macaulay2/">Macaulay2</a></cite>, which can be downloaded
                 <cite><a href="http://www2.macaulay2.com/Macaulay2/Downloads/">here</a></cite>.
                 Note that option to find all fixed points will only work after the user installs
-                Macaulay2. If the model has no fixed points then <i>Error in input</i> with the text
-                <tt>Error running Macaulay2!</tt> will be displayed.
+                Macaulay2. If the model has no fixed points then <i>Message</i> with the text
+                <tt>Macaulay could not find any fixed points</tt> will be displayed.
                 
                 <!--    ACK: WAIT IS THAT TRUE? THAT IS AN ERROR!!!
                         JC: I thought you did this deliberately. Here is the model (below) see for
@@ -761,8 +761,27 @@
         <section>
           <h3> Knockout and Overexpression Experiments </h3>
           <p class="line_space">
-          
+          <i>SteadyCellPhenotype</i> has an option to simulate effects of knockout (k/o) or overexpression (o/e)
+          by using an option <span class="w3-tag w3-round w3-us-blue">Forcing</span> and selecting a value from
+          the dropdown list <tt> 0, 1, or 2</tt> (Figure 9).
+          This will set the update rule to a constant value of the selected species. Attractors then can be
+          computed as described in <i>State Space</i> section.
           </p>
+          <center>
+              <figure>
+                  <img src="images/fpn_oe.png" style="max-width: 90%;"/>
+                  <figcaption>
+                      <b>Figure 9: </b> Example of Fpn overexpression. The results are displayed below indicating
+                      that high iron exporter will result in overexpression of the iron importer TfR1 and iron
+                      regulatory proteins (IRP1 and IRP2), and in decrease of labile iron pool (LIP)
+                      and iron storage protein (Ft). This agrees with our earlier findings: see
+                      <cite><a href="https://doi.org/10.1016/j.jtbi.2012.01.024">
+                          doi:10.1371/journal.pcbi.1005352
+                          </a></cite>
+                  </figcaption>
+              </figure>
+          </center>
+          <img src="images/fpn_oe_results.png" style="max-width: 90%;"/>
         </section>
       </article>
       <!--- Documentation portion END --->
