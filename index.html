@@ -22,11 +22,12 @@
       <a href="source.html" class="w3-bar-item w3-button w3-mobile">Source</a>
       <a href="about.html" class="w3-bar-item w3-button w3-mobile">About the Authors</a>
     </div>
-    <div id="content" class="w3-container w3-mobile" style="margin:auto; width: 97%; text-align: justify; text-justify: inter-word;">
+    <div id="content" class="w3-container w3-mobile" style="margin:auto; width: 80%; text-align: justify; text-justify: inter-word;">
       <style>
         p.line_space
         {
             line-height: 1.7;
+            max-width: 700px;
         }
         
         hr
@@ -47,7 +48,28 @@
       
       <!--- main portion --->
 
-      this is the landing page.
+      <article>
+        <aside class="w3-container w3-margin w3-border-large w3-right">
+          <img src="images/home.svg" style="width: auto; height: 60vh">
+        </aside>
+        <p class="line_space">
+          <i>SteadyCellPhenotype</i> is a browser based interface for the analysis of ternary
+          biological networks capable of deterministically finding all steady states of a network,
+          as well as the simulation and visualization of trajectories with publication quality
+          graphics. <i>SteadyCellPhenotype</i> is also capable of stochastic simulations, which
+          allows the user to approximate the size of the basin for attractors. We also include tools
+          for deterministic simulations of trajectories nearby specified points, allowing the
+          exploration of the system's behavior in that neighborhood.
+        </p>
+        <p class="line_space">
+          Ternary networks are generalizations of Boolean networks which allow variables to take
+          three, rather than two, states. These have the advantage that they can model levels of a
+          node being at a low, normal, or high state rather than simply being activated or not. In
+          this sense, ternary networks lie in the middle ground between Boolean networks and ODEs,
+          being more descriptive but keeping the qualitative nature of a Boolean network.
+        </p>
+        
+      </article>
       
       <!--- main portion END --->
       
