@@ -53,12 +53,13 @@
           <h1>Ternary networks in SteadyCellPhenotype</h1>
           
           <section>
-            <p class="line_space"> Ternary models can represent biomolecular networks in a simple and
-              intuitive manner by viewing the network in terms of a collection of logical rules. One
-              can think of these models as an extension of Boolean models if simple logic is employed,
-              but ternary models can also utilize more complicated rules and expressions. Each species
-              in ternary network is represented by three states: 0, 1, and 2. Various assignments have
-              been suggested for the states. For example, one possibility is to view 0 as
+            <p class="line_space"> Ternary models can represent biomolecular networks in a simple
+              and intuitive manner by viewing the network in terms of a collection of logical
+              rules. One can think of these models as an extension of Boolean models if simple logic
+              is employed, but ternary models can also utilize more complicated rules and
+              expressions. Each species in ternary network is represented by three states: 0, 1, and
+              2. Various assignments have been suggested for the states. For example, one
+              possibility is to view 0 as
               <i>false/inactive</i>, 2 as <i>true/active</i>, and 1 as <i>unknown</i>, meaning that 1
               can be either true/active or false/inactive. Another possibility is to think of these
               numbers as concentration levels of various proteins: <i>low</i> (0),
@@ -88,7 +89,7 @@
           
           <center>
             <figure>
-              <img src="images/Iron_core.svg" style="max-width: 90%;"/>
+              <img src="images/Iron_core.svg" style="max-width: 90%;" alt="Iron Homeostatsis pathway from doi:10.1371/journal.pcbi.1005352"/>
               <figcaption>
                 <b>Figure 1 - Iron Homeostasis Pathway.</b> Portion of the graph from our published
                 model <cite><a href="https://doi.org/10.1371/journal.pcbi.1005352">
@@ -596,63 +597,54 @@
             <h3> State Space: attractors </h3>
             <p class="line_space">
               In the current version of <i>SteadyCellPhenotype</i>, all nodes in the network are on
-              a <i>synchronous</i> update schedule, where all values are updated simultaneously. This
-              implies that trajectories are deterministic and so each state of the network will belong
-              to the basin of attraction of only one attractor: a fixed point or cyclic attractor.
+              a <i>synchronous</i> update schedule, where all values are updated
+              simultaneously. This implies that trajectories are deterministic and so each state of
+              the network will belong to the basin of attraction of only one attractor: a fixed
+              point or cyclic attractor.
             </p>
             
             <p class="line_space">
               <b>Fixed Points</b> can be computed using two different options.
               <ul>
-                <li> Selecting the radio-button <span class="w3-tag w3-round w3-us-blue">Find all
-                    fixed points</span> (see Figure 3).  In this case <i>SteadyCellPhenotype</i> will
-                  compute all fixed points analytically using
+                <li>
+                  Selecting the radio-button <span class="w3-tag w3-round w3-us-blue">Find all fixed
+                    points</span> (see Figure 3).  In this case <i>SteadyCellPhenotype</i> will
+                    compute all fixed points analytically using
                   <cite><a href="http://www2.macaulay2.com/Macaulay2/">Macaulay2</a></cite>, which can be downloaded
                   <cite><a href="http://www2.macaulay2.com/Macaulay2/Downloads/">here</a></cite>.
                   Note that option to find all fixed points will only work after the user installs
-                  Macaulay2. If the model has no fixed points then <i>Message</i> with the text
+                  Macaulay2. If the model has no fixed points then a <i>Message</i> with the text
                   <tt>Macaulay could not find any fixed points</tt> will be displayed.
-                  
-                  <!--    ACK: WAIT IS THAT TRUE? THAT IS AN ERROR!!!
-                          JC: I thought you did this deliberately. Here is the model (below) see for
-                          yourself what happens. I guess, in case there are no fixed points, then
-                          we should display something useful.
-                          
-                          x1 = min(x2,x3)
-                          x2 = 2*x3+x3^2
-                          x3 = 2+x1^2
-                          
-                    -->
                 </li>
                 <li> Another option to find <i>some</i> of the fixed points is by selecting the
                   radio-button <span class="w3-tag w3-round w3-us-blue">Sample fixed points and
-                    cycles</span>. Here the user can selects from the dropdown list the number of random
-                  initial states from which the trajectory will be computed.
+                  cycles</span>. Here the user can select from the dropdown list the number of
+                  random initial states from which the trajectory will be computed.
                 </li>
               </ul>
               <b>Cyclic attractors</b> can be computed by selecting the
               radio-button <span class="w3-tag w3-round w3-us-blue">Sample fixed points and
-                cycles</span> and the number of initial random states. <i>If the number of samples
-                from the dropdown list is larger than the state space (only possible for relatively
-                small models), then a complete state space search will be performed.</i>
+              cycles</span> and the number of initial random states. <i>If the number of samples
+              from the dropdown list is larger than the state space (only possible for relatively
+              small models), then a complete state space search will be performed.</i>
             </p>
             
             <p class="line_space">
               When the radio-button
               <span class="w3-tag w3-round w3-us-blue">Sample fixed points and cycles</span> is
               selected, a length of each trajectory leading to an attractor for each random start is
-              recorded. A histogram, summarizing a distribution of the lengths of paths, is displayed
+              recorded. A histogram, summarizing a distribution of the path lengths, is displayed
               below each attractor (see Figure 4). Attractors can be saved in a tab-separated format.
-              All images also have save button options.
+              All images also have a save button.
               
               <center>
                 <figure>
                   <img src="images/length_of_path.png" style="max-width: 90%;"/>
                   <figcaption>
-                    <b>Figure 4 - Path length.</b> A cyclic attractor of length 6 for the model in Figure 1.
-                    Since the size of the model is small, complete state space search was performed. Numbers
-                    below the attractor (48.8% and Count 356) indicate how many states out of \(3^6 = 729\)
-                    belong to the basin of this attractor.
+                    <b>Figure 4 - Path length.</b> A cyclic attractor of length 6 for the model in
+                    Figure 1.  Since the size of the model is small, a complete state space search
+                    was performed. Numbers below the attractor (48.8% and Count 356) indicate how
+                    many states out of \(3^6 = 729\) belong to the basin of this attractor.
                   </figcaption>
                 </figure>
               </center>
@@ -692,17 +684,19 @@
               <i>SteadyCellPhenotype</i> offers an option to trace a specific state by selecting
               <b>Trace state(s)</b> radio button. This allows a user to investigate the evolution of interesting
               states and visualize trajectories via a graph. Under the
-              <span class="w3-tag w3-round w3-us-blue">Initial State</span> option user can choose
-              from the dropdown list values <tt> 0, 1, 2, or *</tt> (see Figure 6).
-              The symbol asterisk (*) means that all states for this particular species will be considered.
-              If user would like to investigate nearby states around a specific point of interest, then checking
-              the box <b>Include nearby states</b> will include evolution of trajectories from states that are
-              the Hamming distance one from the specified point, i.e., all states that differ from the
-              specified state by one unit for exactly one species.
+              <span class="w3-tag w3-round w3-us-blue">Initial State</span> option the user can
+              choose from a dropdown list the values <tt> 0, 1, 2, or *</tt> (see Figure 6).  The
+              symbol asterisk (*) means that all states for this particular species will be
+              considered.  If the user would like to investigate nearby states around a specific
+              point of interest, then checking the box <b>Include nearby states</b> will include the
+              evolution of trajectories from states that are Hamming distance one from the specified
+              point, i.e., all states that differ from the specified state by one unit for exactly
+              one species.
               
-              <i>SteadyCellPhenotype</i> will display a heatmap that records evolution of trajectories and a
-              directed graph summarizing these paths (see Figure 7). Option to save the graph and the heatmap
-              are available. The values in the heatmap will be saved in a tab-separated format.
+              <i>SteadyCellPhenotype</i> will display a heatmap that records the evolution of
+              trajectories and a directed graph summarizing these paths (see Figure 7). The option
+              to save the graph and heatmap are available. The values in the heatmap will be saved
+              in a tab-separated format.
             </p>
             
             
@@ -710,9 +704,9 @@
               <figure>
                 <img src="images/trace-state-config2.png" style="max-width: 90%;"/>
                 <figcaption>
-                  <b>Figure 6 - Trace state(s).</b> States with varying TfR1 will be traced and nearby
-                  states will be included as well. The output of the selection is shown in Figure 7 below.
-                  Notice no continuity was selected.
+                  <b>Figure 6 - Trace state(s).</b> States with varying TfR1 will be traced and
+                  nearby states will be included as well. The output of the selection is shown in
+                  Figure 7 below.  Notice that no continuity was selected.
                 </figcaption>
               </figure>
             </center>
@@ -728,9 +722,9 @@
                   </div>
                 </div>
                 <caption>
-                  <b>Figure 7:</b> Heatmaps (left image - partial output) displaying evolution of trajectories
-                  from a specified state. States are numbered and correspond to circles of the digraph (right image).
-                  Attractors are depicted by green circles.
+                  <b>Figure 7:</b> Heatmaps (left image - partial output) displaying the evolution
+                  of trajectories from a specified state. States are numbered and correspond to
+                  circles of the digraph (right image).  Attractors are depicted by green circles.
                 </caption>
               </figure>
             </center>
@@ -743,7 +737,7 @@
             </p>
             <center>
               <figure>
-                <img src="images/iron_core_state_space_cont.svg" style="max-width: 100%;"/>
+                <img src="images/iron_core_state_space_cont.svg" style="max-width: 100%; max-height: 75vh"/>
                 <figcaption>
                   <b>Figure 8: </b> Complete state space of iron model in Figure 1. Option
                   "continuous" was selected for all species. Green circles are attractors.  Model
@@ -756,7 +750,7 @@
           <section>
             <h3> Knockout and Overexpression Experiments </h3>
             <p class="line_space">
-              <i>SteadyCellPhenotype</i> has an option to simulate effects of knockout (k/o) or overexpression (o/e)
+              <i>SteadyCellPhenotype</i> has an option to simulate the effects of knockout (k/o) or overexpression (o/e)
               by using an option <span class="w3-tag w3-round w3-us-blue">Forcing</span> and selecting a value from
               the dropdown list <tt> 0, 1, or 2</tt> (Figure 9).
               This will set the update rule to a constant value of the selected species. Attractors then can be
@@ -768,7 +762,7 @@
                 <figcaption>
                   <b>Figure 9: </b> Example of Fpn overexpression. The results are displayed below indicating
                   that high iron exporter will result in overexpression of the iron importer TfR1 and iron
-                  regulatory proteins (IRP1 and IRP2), and in decrease of labile iron pool (LIP)
+                  regulatory proteins (IRP1 and IRP2), and in a decrease of the labile iron pool (LIP)
                   and iron storage protein (Ft). This agrees with our earlier findings: see
                   <cite><a href="https://doi.org/10.1016/j.jtbi.2012.01.024">
                       doi.org/10.1016/j.jtbi.2012.01.024
