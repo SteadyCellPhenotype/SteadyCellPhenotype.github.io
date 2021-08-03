@@ -104,7 +104,7 @@
           </center>
 
           <section>
-            <h3> Local activation functions </h3>
+            <h1>Local activation functions</h1>
             
             <p class="line_space">
               The next step in model building is to define a local activation function for each
@@ -134,7 +134,7 @@
               <div class="w3-cell-row" style="width: 75%">
                 <div class="w3-panel w3-mobile w3-border w3-light-grey w3-leftbar"
                      style="text-align: left">
-                  <h5> <i> SteadyCellPhenotype</i> syntax: </h5>
+                  <i> SteadyCellPhenotype</i> syntax:
                   <center>
                     <tt>
                       LIP = &lt;your function goes here&gt;
@@ -153,7 +153,7 @@
 
             <div class="w3-row">
               <div class="w3-container w3-half">
-                <h4> \(X \rightarrow Y \), a node \(X\) activating a node \(Y\):</h4>
+                \(X \rightarrow Y \), a node \(X\) activating a node \(Y\):
                 <table class="w3-table-all w3-centered w3-bordered w3-hoverable" style="width:70%; table-layout: fixed">
                   <thead>
                     <tr class="w3-grey">
@@ -176,7 +176,7 @@
                 </table>
               </div>
               <div class="w3-container w3-half">
-                <h4> \(X \dashv Y \), a node \(X\) inhibiting a node \(Y\): </h4>
+                \(X \dashv Y \), a node \(X\) inhibiting a node \(Y\):
                 <table class="w3-table-all w3-centered w3-bordered w3-hoverable" style="width:70%; table-layout: fixed">
                   <thead>
                     <tr class="w3-grey">
@@ -223,7 +223,7 @@
               <div class="w3-cell-row" style="width: 75%">
                 <div class="w3-panel w3-mobile w3-border w3-light-grey w3-leftbar"
                      style="text-align: left">
-                  <h5> <i> SteadyCellPhenotype</i> activation syntax: </h5>
+                  <i> SteadyCellPhenotype</i> activation syntax:
                   <center>
                     <tt>Y = X</tt>
                   </center>
@@ -235,7 +235,7 @@
               <div class="w3-cell-row" style="width: 75%">
                 <div class="w3-panel w3-mobile w3-border w3-light-grey w3-leftbar"
                      style="text-align: left">
-                  <h5> <i>SteadyCellPhenotype</i> inhibition syntax: </h5>
+                  <i>SteadyCellPhenotype</i> inhibition syntax:
                   <div style="text-align: center">
                     <div style="display: inline-block; text-align: left">
                       <tt>
@@ -257,7 +257,7 @@
             
             <div class="w3-row">
               <div class="w3-container w3-half">
-                <h4> \(f_Z(X,Y) = \max(X,Y)\):</h4>
+                \(f_Z(X,Y) = \max(X,Y)\):
                 <table class="w3-table-all w3-centered w3-bordered w3-hoverable" style="width:70%; table-layout: fixed">
                   <thead>
                     <tr class="w3-grey">
@@ -323,7 +323,7 @@
                 </table>
               </div>
               <div class="w3-container w3-half">
-                <h4> \(f_Z(X,Y) = \min(X,Y)\): </h4>
+                \(f_Z(X,Y) = \min(X,Y)\):
                 <table class="w3-table-all w3-centered w3-bordered w3-hoverable" style="width:70%; table-layout: fixed">
                   <thead>
                     <tr class="w3-grey">
@@ -402,7 +402,7 @@
               <div class="w3-cell-row" style="width: 75%">
                 <div class="w3-panel w3-mobile w3-border w3-light-grey w3-leftbar"
                      style="text-align: left">
-                  <h5> <i>SteadyCellPhenotype</i> syntax (some possibilities): </h5>
+                  <i>SteadyCellPhenotype</i> syntax (some possibilities):
                   <div style="text-align: center">
                     <div style="display: inline-block; text-align: left">
                       <tt>
@@ -430,7 +430,7 @@
               <div class="w3-cell-row" style="width: 75%">
                 <div class="w3-panel w3-mobile w3-border w3-light-grey w3-leftbar"
                      style="text-align: left">
-                  <h5> <i>SteadyCellPhenotype</i> syntax (some possibilities): </h5>
+                  <i>SteadyCellPhenotype</i> syntax (some possibilities):
                   <div style="text-align: center">
                     <div style="display: inline-block; text-align: left">
                       <tt>
@@ -478,7 +478,7 @@
               <div class="w3-cell-row" style="width: 75%">
                 <div class="w3-panel w3-mobile w3-border w3-light-grey w3-leftbar"
                      style="text-align: left">
-                  <h5> <i>SteadyCellPhenotype</i> syntax for lower case, all caps, and a combination (some possibilities): </h5>
+                  <i>SteadyCellPhenotype</i> syntax for lower case, all caps, and a combination (some possibilities):
                   <div style="text-align: center">
                     <div style="display: inline-block; text-align: left">
                       <tt>
@@ -498,10 +498,9 @@
               <div class="w3-cell-row" style="width: 75%">
                 <div class="w3-panel w3-mobile w3-border w3-light-grey w3-leftbar"
                      style="text-align: left">
-                  <h5> <i>SteadyCellPhenotype</i> syntax for variable names. Once a variable name is
+                  <i>SteadyCellPhenotype</i> syntax for variable names. Once a variable name is
                     assigned (e.g., <b>LIP</b>) then exactly the same expression must be used for
                     all update functions:
-                  </h5>
                   <div style="text-align: center">
                     <div style="display: inline-block; text-align: left">
                       <tt>
@@ -514,7 +513,7 @@
               </div>
             </center>
             
-            <h3> Example: iron homeostasis pathway </h3>
+            <h2> Example: iron homeostasis pathway </h2>
             <p class="line_space">
               Using the graph in Figure 1 and rules as described in
               <cite><a href="https://doi.org/10.1371/journal.pcbi.1005352">doi:10.1371/journal.pcbi.1005352</a></cite>
@@ -527,7 +526,7 @@
               <div class="w3-cell-row" style="width: 75%">
                 <div class="w3-panel w3-mobile w3-border w3-light-grey w3-leftbar"
                      style="text-align: left">
-                  <h5> <i>SteadyCellPhenotype</i> syntax: </h5>
+                  <i>SteadyCellPhenotype</i> syntax:
                   <div style="text-align: center">
                     <div style="display: inline-block; text-align: left">
                       <tt>
@@ -546,7 +545,7 @@
             
             <center>
               <figure>
-                <img src="images/model_entry.png" style="max-width: 90%;"/>
+                <img src="images/model_entry.png" style="max-width: 90%;" alt="Model entry window"/>
                 <figcaption>
                   <b>Figure 2 - Model entry window.</b> User can enter the model directly in the provided window, or
                   choose a text file and then upload the file into the same window. Once model is entered, user may select
@@ -558,7 +557,7 @@
           </section>
           
           <section>
-            <h3> Continuity </h3>
+            <h1> Continuity </h1>
             <p class="line_space">
               In Boolean networks there is a single scale of change for each node. However, in ternary
               networks there are two possible scales: a jump \(\pm1\) or \(\pm 2\). This means that a
@@ -586,7 +585,7 @@
             
             <center>
               <figure>
-                <img src="images/continuity_selection.png" style="max-width: 90%;"/>
+                <img src="images/continuity_selection.png" style="max-width: 90%;" alt="Continuity selection interface"/>
                 <figcaption>
                   <b>Figure 3 - Continuity selection.</b> The user can selected all or some variables
                   to be continuous. In this figure only <tt>TfR1</tt>, <tt>Fpn</tt>, and <tt>Ft</tt>
@@ -598,7 +597,7 @@
           </section>
           
           <section>
-            <h3> State Space: attractors </h3>
+            <h1> State Space: attractors </h1>
             <p class="line_space">
               In the current version of <i>SteadyCellPhenotype</i>, all nodes in the network are on
               a <i>synchronous</i> update schedule, where all values are updated
@@ -615,7 +614,7 @@
                     points</span> (see Figure 3).  In this case <i>SteadyCellPhenotype</i> will
                     compute all fixed points analytically using
                   <cite><a href="http://www2.macaulay2.com/Macaulay2/">Macaulay2</a></cite>, which can be downloaded
-                  <cite><a href="http://www2.macaulay2.com/Macaulay2/Downloads/">here</a></cite>.
+                  <cite><a href="http://www2.macaulay2.com/Macaulay2/Downloads/">at their site</a></cite>.
                   Note that option to find all fixed points will only work after the user installs
                   Macaulay2. If the model has no fixed points then a <i>Message</i> with the text
                   <tt>Macaulay could not find any fixed points</tt> will be displayed.
@@ -643,7 +642,7 @@
               
               <center>
                 <figure>
-                  <img src="images/length_of_path.png" style="max-width: 90%;"/>
+                  <img src="images/length_of_path.png" style="max-width: 90%;" alt="attractor and path length distribution display"/>
                   <figcaption>
                     <b>Figure 4 - Path length.</b> A cyclic attractor of length 6 for the model in
                     Figure 1.  Since the size of the model is small, a complete state space search
@@ -668,7 +667,9 @@
             
             <center>
               <figure>
-                <img src="images/phased_envelope.png" style="max-width: 90%;"/>
+                <img src="images/phased_envelope.png"
+                     style="max-width: 90%;"
+                     alt="phased envelope of trajectories leading to an attractor"/>
                 <figcaption>
                   <b>Figure 5 - Phased Envelope.</b> These images were generated using the entire
                   model (24 nodes) from <cite><a href="https://doi.org/10.1371/journal.pcbi.1005352">
@@ -682,7 +683,7 @@
           </section>
           
           <section>
-            <h3> Tracing a Specific State </h3>
+            <h2> Tracing a Specific State </h2>
             
             <p class="line_space">
               <i>SteadyCellPhenotype</i> offers an option to trace a specific state by selecting
@@ -706,7 +707,9 @@
             
             <center>
               <figure>
-                <img src="images/trace-state-config2.png" style="max-width: 90%;"/>
+                <img src="images/trace-state-config2.png"
+                     style="max-width: 90%;"
+                     alt="trace states interface"/>
                 <figcaption>
                   <b>Figure 6 - Trace state(s).</b> States with varying TfR1 will be traced and
                   nearby states will be included as well. The output of the selection is shown in
@@ -719,10 +722,10 @@
               <figure>
                 <div class="w3-row">
                   <div class="w3-col m6 l6">
-                    <img src="images/trace-state-table.png" style="max-width: 90%;"/>
+                    <img src="images/trace-state-table.png" style="max-width: 90%;" alt="heatmaps of attractors"/>
                   </div>
                   <div class="w3-col m6 l6">
-                    <img src="images/small_model.svg" style="max-width: 90%;"/>
+                    <img src="images/small_model.svg" style="max-width: 90%;" alt="evolution graph of trajectories"/>
                   </div>
                 </div>
                 <caption>
@@ -741,7 +744,9 @@
             </p>
             <center>
               <figure>
-                <img src="images/iron_core_state_space_cont.svg" style="max-width: 100%; max-height: 75vh"/>
+                <img src="images/iron_core_state_space_cont.svg"
+                     style="max-width: 100%; max-height: 75vh"
+                     alt="complete state space of iron model" />
                 <figcaption>
                   <b>Figure 8: </b> Complete state space of iron model in Figure 1. Option
                   "continuous" was selected for all species. Green circles are attractors.  Model
@@ -752,7 +757,7 @@
           </section>
           
           <section>
-            <h3> Knockout and Overexpression Experiments </h3>
+            <h2> Knockout and Overexpression Experiments </h2>
             <p class="line_space">
               <i>SteadyCellPhenotype</i> has an option to simulate the effects of knockout (k/o) or overexpression (o/e)
               by using an option <span class="w3-tag w3-round w3-us-blue">Forcing</span> and selecting a value from
@@ -762,7 +767,7 @@
             </p>
             <center>
               <figure>
-                <img src="images/fpn_oe.png" style="max-width: 90%;"/>
+                <img src="images/fpn_oe.png" style="max-width: 90%;" alt="overexpression interface example"/>
                 <figcaption>
                   <b>Figure 9: </b> Example of Fpn overexpression. The results are displayed below indicating
                   that high iron exporter will result in overexpression of the iron importer TfR1 and iron
@@ -774,7 +779,7 @@
                 </figcaption>
               </figure>
             </center>
-            <img src="images/fpn_oe_results.png" style="max-width: 90%;"/>
+            <img src="images/fpn_oe_results.png" style="max-width: 90%;" alt="results of overexpression interface example"/>
           </section>
         </div>
       </article>
