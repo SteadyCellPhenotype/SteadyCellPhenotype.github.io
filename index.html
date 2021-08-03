@@ -14,8 +14,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> -->
     <!-- <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> -->
+    <style>
+      .skip-link {
+          position: absolute;
+          top: -40px;
+          left: 0;
+          background: #000000;
+          color: white;
+          padding: 8px;
+          z-index: 100;
+      }
+      .skip-link:focus {
+          top: 0;
+      }
+    </style>
   </head>
   <body>
+    <a class="skip-link" href="#main">Skip to main</a>
     <header class="w3-container w3-us-blue">
       <img src="images/logo.svg"
            width="384px"
@@ -54,33 +69,32 @@
         
       </style>
       
-      <!--- main portion --->
+      <main id="main">
 
-      <article>
-        <aside class="w3-container w3-margin w3-border-large w3-right">
-          <img src="images/home.svg" style="max-width: 90%; height: 60vh" alt="Graph of update function on state space">
-        </aside>
-        <p class="line_space">
-          <i>SteadyCellPhenotype</i> is a browser based interface for the analysis of ternary
-          biological networks capable of deterministically finding all steady states of a network,
-          as well as the simulation and visualization of trajectories with publication quality
-          graphics. <i>SteadyCellPhenotype</i> is also capable of stochastic simulations, which
-          allows the user to approximate the size of the basin for attractors. We also include tools
-          for deterministic simulations of trajectories nearby specified points, allowing the
-          exploration of the system's behavior in that neighborhood.
-        </p>
-        <p class="line_space">
-          Ternary networks are generalizations of Boolean networks which allow variables to take
-          three, rather than two, states. These have the advantage that they can model levels of a
-          node being at a low, normal, or high state rather than simply being activated or not. In
-          this sense, ternary networks lie in the middle ground between Boolean networks and ODEs,
-          being more descriptive but keeping the qualitative nature of a Boolean network.
-        </p>
-        
-      </article>
-      
-      <!--- main portion END --->
-      
+        <article>
+          <aside class="w3-container w3-margin w3-border-large w3-right">
+            <img src="images/home.svg" style="max-width: 90%; height: 60vh" alt="Graph of update function on state space">
+          </aside>
+          <p class="line_space">
+            <i>SteadyCellPhenotype</i> is a browser based interface for the analysis of ternary
+            biological networks capable of deterministically finding all steady states of a network,
+            as well as the simulation and visualization of trajectories with publication quality
+            graphics. <i>SteadyCellPhenotype</i> is also capable of stochastic simulations, which
+            allows the user to approximate the size of the basin for attractors. We also include tools
+            for deterministic simulations of trajectories nearby specified points, allowing the
+            exploration of the system's behavior in that neighborhood.
+          </p>
+          <p class="line_space">
+            Ternary networks are generalizations of Boolean networks which allow variables to take
+            three, rather than two, states. These have the advantage that they can model levels of a
+            node being at a low, normal, or high state rather than simply being activated or not. In
+            this sense, ternary networks lie in the middle ground between Boolean networks and ODEs,
+            being more descriptive but keeping the qualitative nature of a Boolean network.
+          </p>
+          
+        </article>
+
+      </main>
       
     </div>
     <footer class="w3-container w3-us-red w3-margin-top">

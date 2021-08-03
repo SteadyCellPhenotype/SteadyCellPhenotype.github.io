@@ -10,8 +10,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> -->
     <!-- <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> -->
+    <style>
+      .skip-link {
+          position: absolute;
+          top: -40px;
+          left: 0;
+          background: #000000;
+          color: white;
+          padding: 8px;
+          z-index: 100;
+      }
+      .skip-link:focus {
+          top: 0;
+      }
+    </style>
   </head>
   <body>
+    <a class="skip-link" href="#main">Skip to main</a>
     <header class="w3-container w3-us-blue">
       <img src="images/logo.svg"
            width="384px"
@@ -47,104 +62,104 @@
         }
         
       </style>
-      
-      <!--- main portion --->
 
-      <article>
-        <h1>About the Authors</h1>
+      <main id="main">
 
-        <section>
-          <div class="w3-row-padding">
-            
-            <div class="w3-quarter">
-              <div class="w3-card-4 w3-dark-grey w3-center w3-margin w3-padding-large" style="width: 80%">
-	        <div class="w3-container w3-center">
-	          <img src="images/AdamKnapp.jpg"
-                       class="w3-circle"
-                       alt="Adam Knapp"
-                       style="width: 80%; height: auto; max-width: 100%; max-height:200px"><br>
-	          <b>Adam Knapp</b>
-	          <div class="w3-section">
-	            Developer<br>
-	            <small>
-                      Division of Pulmonary, Critical Care, and Sleep Medicine<br>
-	              Department of Medicine<br>
-	              University of Florida<br>
-                    </small>
-	            <a href="mailto:adam.knapp@medicine.ufl.edu">Email</a>
-	          </div>
-	        </div>      
+        <article>
+          <h1>About the Authors</h1>
+
+          <section>
+            <div class="w3-row-padding">
+              
+              <div class="w3-quarter">
+                <div class="w3-card-4 w3-dark-grey w3-center w3-margin w3-padding-large" style="width: 80%">
+	          <div class="w3-container w3-center">
+	            <img src="images/AdamKnapp.jpg"
+                         class="w3-circle"
+                         alt="Adam Knapp"
+                         style="width: 80%; height: auto; max-width: 100%; max-height:200px"><br>
+	            <b>Adam Knapp</b>
+	            <div class="w3-section">
+	              Developer<br>
+	              <small>
+                        Division of Pulmonary, Critical Care, and Sleep Medicine<br>
+	                Department of Medicine<br>
+	                University of Florida<br>
+                      </small>
+	              <a href="mailto:adam.knapp@medicine.ufl.edu">Email</a>
+	            </div>
+	          </div>      
+                </div>
               </div>
-            </div>
-            
-            <div class="w3-quarter">
-              <div class="w3-card-4 w3-dark-grey w3-center w3-margin w3-padding-large" style="width: 80%">
-	        <div class="w3-container w3-center">
-	          <img src="images/JuliaChifman.jpg"
-                       class="w3-circle"
-                       alt="Julia Chifman"
-                       style="max-width: 100%; max-height:200px"><br>
-	          <b>Julia Chifman</b>
-	          <div class="w3-section">
-                    PI<br>
-                    <small>
-	              Department of Mathematics and Statistics<br>
-	              American University<br>
-                    </small>
-	            <a href="mailto:chifman@american.edu">Email</a>
+              
+              <div class="w3-quarter">
+                <div class="w3-card-4 w3-dark-grey w3-center w3-margin w3-padding-large" style="width: 80%">
+	          <div class="w3-container w3-center">
+	            <img src="images/JuliaChifman.jpg"
+                         class="w3-circle"
+                         alt="Julia Chifman"
+                         style="max-width: 100%; max-height:200px"><br>
+	            <b>Julia Chifman</b>
+	            <div class="w3-section">
+                      PI<br>
+                      <small>
+	                Department of Mathematics and Statistics<br>
+	                American University<br>
+                      </small>
+	              <a href="mailto:chifman@american.edu">Email</a>
+	            </div>
 	          </div>
-	        </div>
+                </div>
               </div>
-            </div>
 
-            <div class="w3-quarter">
-              <div class="w3-card-4 w3-dark-grey w3-center w3-margin w3-padding-large" style="width: 80%">
-	        <div class="w3-container w3-center">
-	          <img src="images/LuisSV.png"
-                       class="w3-circle"
-                       alt="Luis Sordo Vieira"
-                       style="max-width:100%; max-height:200px"><br>
-	          <b>Luis Sordo Vieira</b>
-	          <div class="w3-section">
-                    Co-PI<br>
-                    <small>
-	              Division of Pulmonary, Critical Care, and Sleep Medicine<br>
-	              Department of Medicine<br>
-	              University of Florida<br>
-                    </small>
+              <div class="w3-quarter">
+                <div class="w3-card-4 w3-dark-grey w3-center w3-margin w3-padding-large" style="width: 80%">
+	          <div class="w3-container w3-center">
+	            <img src="images/LuisSV.png"
+                         class="w3-circle"
+                         alt="Luis Sordo Vieira"
+                         style="max-width:100%; max-height:200px"><br>
+	            <b>Luis Sordo Vieira</b>
+	            <div class="w3-section">
+                      Co-PI<br>
+                      <small>
+	                Division of Pulmonary, Critical Care, and Sleep Medicine<br>
+	                Department of Medicine<br>
+	                University of Florida<br>
+                      </small>
+	            </div>
 	          </div>
-	        </div>
+                </div>
               </div>
-            </div>
 
-            <div class="w3-quarter">
-              <div class="w3-card-4 w3-dark-grey w3-center w3-margin w3-padding-large" style="width: 80%">
-	        <div class="w3-container w3-center">
-	          <img src="images/ReinhardLaubenbacher.jpg"
-                       class="w3-circle"
-                       alt="Reinhard Laubenbacher"
-                       style="max-width:100%; max-height:200px"><br>
-	          <b>Reinhard Laubenbacher</b>
-	          <div class="w3-section">
-                    Co-PI<br>
-                    <small>
-	              Dean’s Professor of Systems Medicine<br>
-	              Director, Laboratory for Systems Medicine<br>
-	              Division of Pulmonary, Critical Care, and Sleep Medicine<br>
-	              Department of Medicine<br>
-	              University of Florida<br>
-                    </small>
+              <div class="w3-quarter">
+                <div class="w3-card-4 w3-dark-grey w3-center w3-margin w3-padding-large" style="width: 80%">
+	          <div class="w3-container w3-center">
+	            <img src="images/ReinhardLaubenbacher.jpg"
+                         class="w3-circle"
+                         alt="Reinhard Laubenbacher"
+                         style="max-width:100%; max-height:200px"><br>
+	            <b>Reinhard Laubenbacher</b>
+	            <div class="w3-section">
+                      Co-PI<br>
+                      <small>
+	                Dean’s Professor of Systems Medicine<br>
+	                Director, Laboratory for Systems Medicine<br>
+	                Division of Pulmonary, Critical Care, and Sleep Medicine<br>
+	                Department of Medicine<br>
+	                University of Florida<br>
+                      </small>
+	            </div>
 	          </div>
-	        </div>
+                </div>
               </div>
-            </div>
 
-            
-          </div>
-        </section>
-      </article>
-      
-      <!--- main portion END --->
+              
+            </div>
+          </section>
+        </article>
+        
+      </main>
       
       
     </div>
