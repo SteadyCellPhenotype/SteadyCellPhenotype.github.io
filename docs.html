@@ -93,17 +93,20 @@
               <p class="line_space">
                 An example of a biological network (or a graph) is depicted in Figure 1 below.  This
                 network is part of our previously published much larger network (see
-                <cite><a href="https://doi.org/10.1371/journal.pcbi.1005352">
-                    doi:10.1371/journal.pcbi.1005352</a></cite>).  We have selected the <i>iron
-                  homeostasis pathway</i> to demonstrate the ideas and the terminology of this
-                section. The underlying graph of this network is also a directed graph in the sense
-                that each species is connected by an arc (edge) that has a direction, e.g., there is
-                an arrow from TfR1 (transferrin receptor 1) to LIP (labile iron pool). In addition,
-                in this network the graph is <i>signed</i> graph, that is, each connection from one
-                species to the next is either positive (activation - blue arc with an arrow head) or
-                negative (inhibition - orange arc with a hammer head).  We would like to note, that
-                edges joining species do not have to be signed, but in most applications, majority
-                of connections will be positive or negative.
+                <cite>
+                  <a href="https://doi.org/10.1371/journal.pcbi.1005352">
+                    doi:10.1371/journal.pcbi.1005352
+                  </a>
+                </cite>).  We have selected the <i>iron homeostasis pathway</i> to demonstrate the
+                ideas and the terminology of this section. The underlying graph of this network is
+                also a directed graph in the sense that each species is connected by an arc (edge)
+                that has a direction, e.g., there is an arrow from TfR1 (transferrin receptor 1) to
+                LIP (labile iron pool). In addition, in this network the graph is a <i>signed</i>
+                graph, that is, each connection from one species to the next is either positive
+                (activation - a blue arc with an arrow head) or negative (inhibition - an orange arc
+                with a hammer head).  We would like to note, that edges joining species do not have
+                to be signed, but in most applications, majority of connections will be positive or
+                negative.
               </p>
             </section>
             
@@ -111,10 +114,13 @@
               <figure>
                 <img src="images/Iron_core.svg" style="max-width: 90%;" alt="Iron Homeostatsis pathway from doi:10.1371/journal.pcbi.1005352"/>
                 <figcaption>
-                  <b>Figure 1 - Iron Homeostasis Pathway.</b> Portion of the graph from our published
-                  model <cite><a href="https://doi.org/10.1371/journal.pcbi.1005352">
+                  <b>Figure 1 - Iron Homeostasis Pathway.</b> A portion of the graph from our
+                  published model
+                  <cite>
+                    <a href="https://doi.org/10.1371/journal.pcbi.1005352">
                       doi:10.1371/journal.pcbi.1005352
-                  </a></cite>
+                    </a>
+                  </cite>
                 </figcaption>
               </figure>
             </center>
@@ -125,25 +131,23 @@
               <p class="line_space">
                 The next step in model building is to define a local activation function for each
                 node in the network.  The value of each local activation function depends on its
-                input nodes (species) and their current state.  This can be accomplished in
-                multiple ways (i) using an analog to the Boolean formalism, (ii) tables and (iii)
-                function over finite field on three elements. These are not the only
-                possibilities. Here we describe the first possibility and just mention the second
-                (our future editions will include generation of functions from tables directly).
-                As for the third option and others, our browser based interface <i>
-                  SteadyCellPhenotype</i> is capable of reading any input function over a finite
-                field on three elements, thus allowing the user to explore any type of ternary
-                network.
+                input nodes (species) and their current state.  This can be accomplished in multiple
+                ways (i) using an analog to the Boolean formalism, (ii) tables and (iii) functions
+                over finite field on three elements. These are not the only possibilities. Here we
+                describe the first possibility and just mention the second (our future editions will
+                include generation of functions from tables directly).  As for the third option and
+                others, our browser based interface <i> SteadyCellPhenotype</i> is capable of
+                reading any input function over a finite field on three elements, thus allowing the
+                user to explore any type of ternary network.
               </p>
               
               <p class="line_space">
                 A local activation function for a node \(v\) is often denoted in literature by
-                \(f_v\). If the node \(v\) has multiple input nodes \( w_1, w_2, \dots, w_k \),
-                then this function is written as \( f_v(w_1, w_2, \dots, w_k)\). Using this
-                notation and Figure 1 activation function, for example, for LIP is then
-                \(f_{LIP}(TfR1, Fpn, Ft)\). To make notations simpler, <i>SteadyCellPhenotype</i>
-                allows user to replace bulky notation \(f_{LIP}(TfR1, Fpn, Ft)\) by simply typing
-                \(LIP.\)
+                \(f_v\). If the node \(v\) has multiple input nodes \( w_1, w_2, \dots, w_k \), then
+                this function is written as \( f_v(w_1, w_2, \dots, w_k)\). Using this notation and
+                Figure 1 activation function, for example, for LIP is then \(f_{LIP}(TfR1, Fpn,
+                Ft)\). To make notations simpler, <i>SteadyCellPhenotype</i> allows the user to
+                replace the bulky notation \(f_{LIP}(TfR1, Fpn, Ft)\) by simply typing \(LIP.\)
               </p>
               
               <center>
@@ -229,10 +233,10 @@
               </div>
               <p class="line_space">
                 Since \(-1 \bmod 3 = 2\), then the equation for inhibition can also be written as
-                \(f_Y(X) = 2+2X\). Note that the table for inhibition just reverses the values and so
-                can be considered as an analog of the Boolean NOT gate. The user may then write the
-                local activation function for inhibition in several ways, including algebraic forms as
-                well as using the included <tt>not</tt> function.
+                \(f_Y(X) = 2+2X\). Note that the table for inhibition just reverses the values and
+                so can be considered as an analog of the Boolean NOT gate. The user may then write
+                the local activation function for inhibition in several ways, including algebraic
+                forms as well as using the included <tt>not</tt> function.
               </p>
               
               <center>
@@ -266,9 +270,9 @@
               </center>
               
               <p class="line_space">
-                When a node has two inputs (e.g., TfR1, Fpn and Ft in Figure 1) then local activation
-                functions may also be defined using the <tt>max</tt> or <tt>min</tt> operators (see
-                Tables below).
+                When a node has two inputs (e.g., TfR1, Fpn and Ft in Figure 1) then the local
+                activation functions may also be defined using the <tt>max</tt> or <tt>min</tt>
+                operators (see Tables below).
               </p>
               
               <div class="w3-row">
@@ -407,10 +411,10 @@
               </div>
 
               <p class="line_space">
-                Note that <i>SteadyCellPhenotype</i>'s <tt>max</tt> and <tt>min</tt> operators support
-                two or <i>more</i> arguments. One can also combine operators, using the <tt>not</tt>
-                operator inside the <tt>max</tt> and <tt>min</tt>. For example, if X activates node Z
-                but Y inhibits node Z then possible update rule could be
+                Note that <i>SteadyCellPhenotype</i>'s <tt>max</tt> and <tt>min</tt> operators
+                support exactly two arguments. One can also combine operators, using
+                the <tt>not</tt> operator inside the <tt>max</tt> and <tt>min</tt>. For example, if
+                X activates node Z but Y inhibits node Z then a possible update rule could be
                 \(f_Z(X,Y)=\min(X,\mathrm{not}(Y)))\).
               </p>
               
@@ -437,8 +441,8 @@
               </center>
 
               <p class="line_space">
-                If nontraditional activation, inhibition, or any other modulation is required, then the
-                user may enter any combination of algebraic or max/min/not expressions
+                If nontraditional activation, inhibition, or any other modulations are required,
+                then the user may enter any combination of algebraic or max/min/not expressions
                 and <i>SteadyCellPhenotype</i> will evaluate the corresponding function modulo 3.
               </p>
               
@@ -464,12 +468,13 @@
 
               
               <p class="line_space">
-                For nodes with more than two inputs, any composition of the <tt>max</tt>, <tt>min</tt>,
-                and <tt>not</tt> operators are possible. The <tt>not</tt> operator will always take a
-                single expression as input and the <tt>max</tt> and <tt>min</tt> operators take two or
-                more comma delimited arguments. Similar to the cases above, other expressions can be
-                used as well among input nodes. Internally, <tt>max</tt> and <tt>min</tt> operators are
-                recoded as polynomials of degree four when necessary for algebraic computations:
+                For nodes with more than two inputs, any composition of
+                the <tt>max</tt>, <tt>min</tt>, and <tt>not</tt> operators are
+                possible. The <tt>not</tt> operator will always take a single expression as input
+                and the <tt>max</tt> and <tt>min</tt> operators take two comma delimited
+                arguments. Similar to the cases above, other expressions can be used as well among
+                input nodes. Internally, <tt>max</tt> and <tt>min</tt> operators are recoded as
+                polynomials of degree four when necessary for algebraic computations:
                 
                 <div class="w3-row w3-center w3-mobile">
                   <div class="w3-container w3-half">
@@ -487,9 +492,6 @@
                 combination of cases can be used to enter these functions.
               </p>
               
-              <!--  ACK: WE SHOULD SAY SOMETHING ABOUT CASES FOR VARIABLES.
-                    JC: here is my attempt: second box -->
-
               <center>
                 <div class="w3-cell-row" style="width: 75%">
                   <div class="w3-panel w3-mobile w3-border w3-light-grey w3-leftbar"
@@ -533,10 +535,10 @@
               <p class="line_space">
                 Using the graph in Figure 1 and rules as described in
                 <cite><a href="https://doi.org/10.1371/journal.pcbi.1005352">doi:10.1371/journal.pcbi.1005352</a></cite>
-                we can write local activation functions for this portion of the network. Note that IRP1
-                has an adjusted rule (see discussion on pages 16-17 of the article mentioned
+                we can write local activation functions for this portion of the network. Note that
+                IRP1 has an adjusted rule (see discussion on pages 16-17 of the article mentioned
                 above). Syntax and the actual entry within an application (Figure 2) are shown
-                below. Note, user also has an option to upload the file in text (.txt) format.
+                below. Note, the user also has an option to upload the file in text (.txt) format.
               </p>
               <center>
                 <div class="w3-cell-row" style="width: 75%">
@@ -563,8 +565,9 @@
                 <figure>
                   <img src="images/model_entry.png" style="max-width: 90%;" alt="Model entry window"/>
                   <figcaption>
-                    <b>Figure 2 - Model entry window.</b> User can enter the model directly in the provided window, or
-                    choose a text file and then upload the file into the same window. Once model is entered, user may select
+                    <b>Figure 2 - Model entry window.</b> The user can enter the model directly in
+                    the provided window, or choose a text file and then upload the file into the
+                    same window. Once the model is entered, the user may select
                     <b>Set Model Options</b> button that will take the user to the window similar in Figure 3 below.
                   </figcaption>
                 </figure>
@@ -575,14 +578,14 @@
             <section>
               <h1> Continuity </h1>
               <p class="line_space">
-                In Boolean networks there is a single scale of change for each node. However, in ternary
-                networks there are two possible scales: a jump \(\pm1\) or \(\pm 2\). This means that a
-                node can have a "discontinuous" change, for example from low (0) to high (2), in a
-                single time step. If user wishes to ensure that all or some nodes change by at most one
-                unit then one can select an option <span class="w3-tag w3-round
-                                                                w3-us-blue">Continuous</span> for the variables (see Figure 3).
+                In Boolean networks there is a single scale of change for each node. However, in
+                ternary networks there are two possible scales: a jump \(\pm1\) or \(\pm 2\). This
+                means that a node can have a "discontinuous" change, for example from low (0) to
+                high (2), in a single time step. If the user wishes to ensure that all or some nodes
+                change by at most one unit then one can select an option <span class="w3-tag
+                w3-round w3-us-blue">Continuous</span> for the variables (see Figure 3).
                 
-                Internally continuity is applied to each update rule as follows:
+                Internally, continuity is applied to each update rule as follows:
                 <ul>
                   <li>
                     the local activation function \(f_X\) is computed for the variable \(X\) and
@@ -603,9 +606,10 @@
                 <figure>
                   <img src="images/continuity_selection.png" style="max-width: 90%;" alt="Continuity selection interface"/>
                   <figcaption>
-                    <b>Figure 3 - Continuity selection.</b> The user can selected all or some variables
-                    to be continuous. In this figure only <tt>TfR1</tt>, <tt>Fpn</tt>, and <tt>Ft</tt>
-                    are selected. The remaining variables may undergo \(\pm2\) jumps.
+                    <b>Figure 3 - Continuity selection.</b> The user can select all or some
+                    variables to be continuous. In this figure only <tt>TfR1</tt>, <tt>Fpn</tt>,
+                    and <tt>Ft</tt> are selected. The remaining variables may undergo \(\pm2\)
+                    jumps.
                   </figcaption>
                 </figure>
               </center>
@@ -615,9 +619,9 @@
             <section>
               <h1> State Space: attractors </h1>
               <p class="line_space">
-                In the current version of <i>SteadyCellPhenotype</i>, all nodes in the network are on
-                a <i>synchronous</i> update schedule, where all values are updated
-                simultaneously. This implies that trajectories are deterministic and so each state of
+                In the current version of <i>SteadyCellPhenotype</i>, all nodes in the network are
+                on a <i>synchronous</i> update schedule, where all values are updated
+                simultaneously. This implies that trajectories are deterministic and each state of
                 the network will belong to the basin of attraction of only one attractor: a fixed
                 point or cyclic attractor.
               </p>
@@ -630,14 +634,15 @@
                       points</span> (see Figure 3).  In this case <i>SteadyCellPhenotype</i> will
                     compute all fixed points analytically using
                     <cite><a href="http://www2.macaulay2.com/Macaulay2/">Macaulay2</a></cite>, which can be downloaded
-                    <cite><a href="http://www2.macaulay2.com/Macaulay2/Downloads/">at their site</a></cite>.
-                    Note that option to find all fixed points will only work after the user installs
-                    Macaulay2. If the model has no fixed points then a <i>Message</i> with the text
+                    <cite><a href="http://www2.macaulay2.com/Macaulay2/Downloads/">at their
+                    site</a></cite>.  Note that the option to find all fixed points will only work
+                    after the user installs Macaulay2. If the model has no fixed points then
+                    a <i>Message</i> with the text
                     <tt>Macaulay could not find any fixed points</tt> will be displayed.
                   </li>
                   <li> Another option to find <i>some</i> of the fixed points is by selecting the
                     radio-button <span class="w3-tag w3-round w3-us-blue">Sample fixed points and
-                      cycles</span>. Here the user can select from the dropdown list the number of
+                    cycles</span>. Here the user can select from the dropdown list the number of
                     random initial states from which the trajectory will be computed.
                   </li>
                 </ul>
@@ -651,7 +656,7 @@
               <p class="line_space">
                 When the radio-button
                 <span class="w3-tag w3-round w3-us-blue">Sample fixed points and cycles</span> is
-                selected, a length of each trajectory leading to an attractor for each random start is
+                selected, the length of each trajectory leading to an attractor for each random start is
                 recorded. A histogram, summarizing a distribution of the path lengths, is displayed
                 below each attractor (see Figure 4). Attractors can be saved in a tab-separated format.
                 All images also have a save button.
@@ -669,16 +674,17 @@
                 </center>
                 
               <p class="line_space">
-                Additionally, user can select the
-                <span class="w3-tag w3-round w3-us-blue">Visualize</span> option for all or some of the
-                variables (one can see this option in Figure 3). When this option is selected
-                then <i>SteadyCellPhenotype</i> will collect additional statistics. In particular, for
-                each random starting state a trajectory (path) is recorded. The collection of all these
-                trajectories are then aligned <i>on the right</i> to ensure that they all arrive at the
-                same time at the fixed point or at a specified point on their cyclic attractor. The image
-                in Figure 5 displays the mean value and standard deviation of the variable states along
-                these trajectories. This feature is useful in demonstrating, for example, if biological
-                species of interest (LIP) had a cyclic behavior before entering a fixed point.
+                Additionally, the user can select the
+                <span class="w3-tag w3-round w3-us-blue">Visualize</span> option for all or some of
+                the variables (one can see this option in Figure 3). When this option is selected
+                then <i>SteadyCellPhenotype</i> will collect additional statistics. In particular,
+                for each random starting state a trajectory (path) is recorded. The collection of
+                all these trajectories are then aligned <i>on the right</i> to ensure that they all
+                arrive at the same time at the fixed point or at a specified point on their cyclic
+                attractor. The image in Figure 5 displays the mean value and standard deviation of
+                the variable states along these trajectories. This feature is useful in
+                demonstrating, for example, if a biological species of interest (LIP) had a cyclic
+                behavior before entering a fixed point.
               </p>
               
               <center>
@@ -688,9 +694,12 @@
                        alt="phased envelope of trajectories leading to an attractor"/>
                   <figcaption>
                     <b>Figure 5 - Phased Envelope.</b> These images were generated using the entire
-                    model (24 nodes) from <cite><a href="https://doi.org/10.1371/journal.pcbi.1005352">
+                    model (24 nodes) from
+                    <cite>
+                      <a href="https://doi.org/10.1371/journal.pcbi.1005352">
                         doi:10.1371/journal.pcbi.1005352
-                    </a></cite>
+                      </a>
+                    </cite>
                   </figcaption>
                 </figure>
               </center>
@@ -703,8 +712,9 @@
               
               <p class="line_space">
                 <i>SteadyCellPhenotype</i> offers an option to trace a specific state by selecting
-                <b>Trace state(s)</b> radio button. This allows a user to investigate the evolution of interesting
-                states and visualize trajectories via a graph. Under the
+                the
+                <b>Trace state(s)</b> radio button. This allows the user to investigate the
+                evolution of interesting states and visualize trajectories via a graph. Under the
                 <span class="w3-tag w3-round w3-us-blue">Initial State</span> option the user can
                 choose from a dropdown list the values <tt> 0, 1, 2, or *</tt> (see Figure 6).  The
                 symbol asterisk (*) means that all states for this particular species will be
@@ -753,10 +763,10 @@
               </center>
               
               <p class="line_space">
-                <b>Note:</b> for small models selecting asterisk (*) for all species
-                will result in the computation of the entire state space. Using this option for large
-                models is not advisable. Complete state space for our running example is displayed
-                in Figure 8 below.
+                <b>Note:</b> for small models selecting asterisk (*) for all species will result in
+                the computation of the entire state space. Using this option for large models is not
+                advisable. The complete state space for our running example is displayed in Figure 8,
+                below.
               </p>
               <center>
                 <figure>
@@ -764,9 +774,9 @@
                        style="max-width: 100%; max-height: 75vh"
                        alt="complete state space of iron model" />
                   <figcaption>
-                    <b>Figure 8: </b> Complete state space of iron model in Figure 1. Option
-                    "continuous" was selected for all species. Green circles are attractors.  Model
-                    has one fixed point and two cyclic attractors of length 6.
+                    <b>Figure 8: </b> Complete state space of iron model in Figure 1. The option
+                    "continuous" was selected for all species. Green circles are attractors.  This
+                    model has one fixed point and two cyclic attractors of length 6.
                   </figcaption>
                 </figure>
               </center>
@@ -775,23 +785,27 @@
             <section>
               <h2> Knockout and Overexpression Experiments </h2>
               <p class="line_space">
-                <i>SteadyCellPhenotype</i> has an option to simulate the effects of knockout (k/o) or overexpression (o/e)
-                by using an option <span class="w3-tag w3-round w3-us-blue">Forcing</span> and selecting a value from
-                the dropdown list <tt> 0, 1, or 2</tt> (Figure 9).
-                This will set the update rule to a constant value of the selected species. Attractors then can be
-                computed as described in <i>State Space</i> section.
+                <i>SteadyCellPhenotype</i> has an option to simulate the effects of knockout (k/o)
+                or overexpression (o/e) by using an option <span class="w3-tag w3-round
+                w3-us-blue">Forcing</span> and selecting a value from the dropdown list <tt> 0, 1,
+                or 2</tt> (Figure 9).  This will set the update rule to a constant value of the
+                selected species. Attractors then can be computed as described in <i>State Space</i>
+                section.
               </p>
               <center>
                 <figure>
                   <img src="images/fpn_oe.png" style="max-width: 90%;" alt="overexpression interface example"/>
                   <figcaption>
-                    <b>Figure 9: </b> Example of Fpn overexpression. The results are displayed below indicating
-                    that high iron exporter will result in overexpression of the iron importer TfR1 and iron
-                    regulatory proteins (IRP1 and IRP2), and in a decrease of the labile iron pool (LIP)
-                    and iron storage protein (Ft). This agrees with our earlier findings: see
-                    <cite><a href="https://doi.org/10.1016/j.jtbi.2012.01.024">
+                    <b>Figure 9: </b> Example of Fpn overexpression. The results are displayed below
+                    indicating that high iron exporter will result in overexpression of the iron
+                    importer TfR1 and iron regulatory proteins (IRP1 and IRP2), and in a decrease of
+                    the labile iron pool (LIP) and iron storage protein (Ft). This agrees with our
+                    earlier findings: see
+                    <cite>
+                      <a href="https://doi.org/10.1016/j.jtbi.2012.01.024">
                         doi.org/10.1016/j.jtbi.2012.01.024
-                    </a></cite>
+                      </a>
+                    </cite>
                   </figcaption>
                 </figure>
               </center>
