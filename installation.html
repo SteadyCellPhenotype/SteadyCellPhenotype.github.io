@@ -97,27 +97,10 @@
               <pre><code>python3 -m pip install steady-cell-phenotype</code></pre>
 
               <p class="line_space">
-                Alternatively, one can install <i>SteadyCellPhenotype</i> from the source on
-                github. While in the top directory of the repository, you can
-                install <i>SteadyCellPhenotype</i>'s dependencies using, as appropriate, either
-              </p>
-
-              <pre><code>python -m pip install -r requirements.txt</code></pre> or
-              <pre><code>python3 -m pip install -r requirements.txt</code></pre>
-            
-              <p class="line_space">
-                Then, on Mac or linux, the site can then be started by
-              </p>
-              <pre><code>./start_scp.sh</code></pre>
-              <p class="line_space">
-                You can also install SteadyCellPhenotype as a local python package via pip:
-              </p>
-              <pre><code>python3 -m pip install -e .</code></pre>
-              
-              <p class="line_space">
                 This will add two executables to your path, <code>start_scp.sh</code>
-                and <code>scp_converter.py</code>. You can also install SteadyCellPhenotype in a
-                virtual environment, see below, which may help with package versioning issues.
+                and <code>scp_converter.py</code>. You can also install SteadyCellPhenotype directly
+                from the github repository, if you would like to contribute to the project, and/or
+                in a virtual environment, see below, which may help with package versioning issues.
               </p>
             
               <p class="line_space">
@@ -135,6 +118,32 @@
                 contains info on how to get SteadyCellPhenotype working for remote users.
               </p>
 
+              <h2>Installing from the github repository</h2>
+              
+              <p class="line_space">
+                Alternatively, one can install <i>SteadyCellPhenotype</i> from the source on
+                github. While in the top directory of the repository, you can
+                install <i>SteadyCellPhenotype</i>'s dependencies using, as appropriate, either
+              </p>
+
+              <pre><code>python -m pip install -r requirements.txt</code></pre> or
+              <pre><code>python3 -m pip install -r requirements.txt</code></pre>
+            
+              <p class="line_space">
+                Then, on Mac or linux, the site can then be started by
+              </p>
+              <pre><code>./start_scp.sh</code></pre>
+              <p class="line_space">
+                You can also install SteadyCellPhenotype as a local python package via pip:
+              </p>
+              <pre><code>python3 -m pip install -e .</code></pre>
+              <p class="line_space">
+                This will install SteadyCellPhenotype as an "editable" package. i.e. Changes made to
+                the source in this folder will apply to the active installation. (Non-editable
+                packages run from a separate copy, created on installation.)
+              </p>
+              
+              
               <h2 id="using-a-virtual-environment">Using a virtual environment</h2>
 
               <p class="line_space">
